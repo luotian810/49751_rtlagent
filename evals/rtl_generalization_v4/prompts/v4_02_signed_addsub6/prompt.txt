@@ -1,0 +1,8 @@
+实现 6 位二进制补码饱和加减器，纯组合逻辑。接口：
+module TopModule(input signed [5:0] lhs_i, input signed [5:0] rhs_i,
+                 input subtract_i, output signed [5:0] value_o, output clipped_o);
+subtract_i=0 时数学结果 z=lhs_i+rhs_i，为 1 时 z=lhs_i-rhs_i。
+若 z>31，value_o=31 且 clipped_o=1；若 z<-32，value_o=-32 且 clipped_o=1。
+其余情况 value_o=z、clipped_o=0，包括结果恰为 -32 或 31。
+内部必须保留足够位宽，不允许先在 6 位截断后再判断溢出。
+只提交完整可综合的 Verilog/SystemVerilog。

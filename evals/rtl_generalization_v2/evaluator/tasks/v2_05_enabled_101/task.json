@@ -1,0 +1,14 @@
+{
+  "task_id": "v2_05_enabled_101",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "重叠检测、有效位采样与单拍脉冲",
+  "deliberate_mutant": "检测后清空状态，漏掉重叠 10101 的第二个脉冲"
+}

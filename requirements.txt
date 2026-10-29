@@ -1,0 +1,4 @@
+# Core agent, local scripts and the original baseline use Python standard library.
+# Python >= 3.10 is required. EDA tools are installed separately.
+# The HTTP service also uses the standard library. The separate local vLLM
+# runtime belongs in the target official image with a compatible ROCm version.

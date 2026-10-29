@@ -1,0 +1,9 @@
+实现允许重叠的串行序列 1101 检测器。接口：
+module TopModule(input clock_i, input reset_i, input bit_enable_i,
+                 input bit_i, output match_o);
+仅在 clock_i 上升沿工作。reset_i 是高有效同步复位，复位优先，清除历史且 match_o=0。
+未复位时，每个 bit_enable_i=1 的上升沿接收 bit_i，组成有效比特流。
+如果包含本拍新比特的最近四个有效比特正好是按时间顺序的 1,1,0,1，则该沿后 match_o=1，否则为 0。
+允许不同匹配共享比特；收满四个有效比特前 match_o 必须为 0。
+bit_enable_i=0 时不改变历史，但该沿后 match_o=0，禁止把旧脉冲保持为 1。
+只提交完整可综合的 Verilog/SystemVerilog。

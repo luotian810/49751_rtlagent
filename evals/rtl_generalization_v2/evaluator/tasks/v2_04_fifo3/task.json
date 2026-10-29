@@ -1,0 +1,14 @@
+{
+  "task_id": "v2_04_fifo3",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "非二次幂 FIFO、空满边界与同时入出",
+  "deliberate_mutant": "满 FIFO 同拍 pop/push 时错误拒绝 push"
+}

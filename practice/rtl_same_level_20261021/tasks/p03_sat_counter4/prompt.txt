@@ -1,0 +1,21 @@
+实现名为 TopModule 的 4 位无符号饱和加减计数器：
+
+module TopModule (
+    input  wire       clk,
+    input  wire       reset,
+    input  wire       load,
+    input  wire       enable,
+    input  wire       up,
+    input  wire [3:0] data,
+    output reg  [3:0] q
+);
+
+所有时序逻辑在 clk 上升沿工作，reset 为高有效同步复位。
+每个上升沿按下列优先级更新 q：
+1. reset=1：q 置 0，忽略其他输入。
+2. reset=0 且 load=1：q 置为 data；加载不受 enable 限制。
+3. reset=0、load=0、enable=1：up=1 则加一，但 q=15 时保持 15；up=0 则减一，但 q=0 时保持 0。
+4. 其余情况保持 q。
+
+注意这是饱和计数，不允许 15 加一回到 0 或 0 减一回到 15。
+不要求复位前的初始值；测试会先复位。仅提交可综合模块，不包含测试台。

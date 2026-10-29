@@ -1,0 +1,38 @@
+{
+  "status": "failed",
+  "backend": "iverilog",
+  "log": "$ D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\iverilog.exe -g2012 -s tb -s __rtl_agent_watchdog -s __rtl_agent_waveform -o sim.out rtl.sv tb.sv watchdog.sv waveform.sv\n\n\n$ D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\vvp.exe sim.out\nVCD info: dumpfile wave.vcd opened for output.\nRTL_AGENT_FAIL check=7779 reset=0 load=0 enable=1 up=1 data=0 got=0 expected=f\ntb.sv:34: $finish called at 77796000 (1ps)\n",
+  "elapsed_s": 0.125,
+  "details": {
+    "work_dir": "D:\\fgpa\\readable-rtl-agent\\practice\\rtl_same_level_20261021\\results\\negative\\p03_sat_counter4",
+    "commands": [
+      [
+        "D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb",
+        "-s",
+        "__rtl_agent_watchdog",
+        "-s",
+        "__rtl_agent_waveform",
+        "-o",
+        "sim.out",
+        "rtl.sv",
+        "tb.sv",
+        "watchdog.sv",
+        "waveform.sv"
+      ],
+      [
+        "D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\vvp.exe",
+        "sim.out"
+      ]
+    ],
+    "returncode": 0,
+    "pass_marker_seen": false,
+    "simulation_limit_ns": 1000000,
+    "waveform": "D:\\fgpa\\readable-rtl-agent\\practice\\rtl_same_level_20261021\\results\\negative\\p03_sat_counter4\\wave.vcd",
+    "verification_scope": "generated_testbench_only"
+  },
+  "task_id": "p03_sat_counter4",
+  "checks": null
+}

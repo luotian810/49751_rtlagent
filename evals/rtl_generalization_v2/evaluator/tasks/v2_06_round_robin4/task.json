@@ -1,0 +1,14 @@
+{
+  "task_id": "v2_06_round_robin4",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "轮询优先级、空闲与未接受时保持",
+  "deliberate_mutant": "固定低位优先，未在成功接受后轮转"
+}

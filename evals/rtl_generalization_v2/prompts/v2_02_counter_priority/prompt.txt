@@ -1,0 +1,7 @@
+Implement synthesizable SystemVerilog with this exact interface:
+module TopModule(input clk, input reset, input load, input en,
+                 input [4:0] data, output reg [4:0] q);
+On each rising clock edge apply this priority: reset > load > en > hold.
+reset is synchronous, active high, and sets q=0. Otherwise load=1 loads data
+even when en=0. Otherwise en=1 increments q by one modulo 32. Otherwise q
+retains its value. Changes of reset between rising edges must not change q.

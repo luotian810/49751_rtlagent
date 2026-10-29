@@ -1,0 +1,10 @@
+Implement synthesizable SystemVerilog with this exact interface:
+module TopModule(input clk, input reset, input en, input bit_in, output reg match);
+Detect pattern 101 in the sequence of bit_in values sampled only on rising
+edges with en=1. reset is synchronous active high, has highest priority,
+clears all partial history and sets match=0. On every non-reset edge set
+match=1 exactly when en=1 and the newest three enabled samples are 101;
+otherwise set match=0. Detection overlaps: enabled sequence 10101 produces
+match pulses on its third and fifth samples. When en=0, retain partial
+history but clear match, even if the preceding edge detected a pattern.
+No match is allowed before three enabled samples since the latest reset.

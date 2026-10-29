@@ -1,0 +1,14 @@
+{
+  "task_id": "v2_01_signed_sat8",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "有符号加法、扩位与双向饱和",
+  "deliberate_mutant": "8 位截断回绕，未饱和"
+}

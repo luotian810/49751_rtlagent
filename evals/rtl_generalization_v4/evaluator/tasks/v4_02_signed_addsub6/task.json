@@ -1,0 +1,14 @@
+{
+  "task_id": "v4_02_signed_addsub6",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "带符号加减、扩大中间值、上下界饱和",
+  "deliberate_mutant": "减法选择被错误实现为加法，饱和框架仍可编译"
+}

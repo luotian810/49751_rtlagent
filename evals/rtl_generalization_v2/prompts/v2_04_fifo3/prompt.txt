@@ -1,0 +1,15 @@
+Implement synthesizable SystemVerilog with this exact interface:
+module TopModule(input clk, input reset, input push, input pop, input [7:0] din,
+                 output [7:0] dout, output empty, output full, output [1:0] count);
+An 8-bit FIFO of exactly THREE entries. reset is synchronous active high,
+has highest priority, and discards all entries. count is the current occupancy
+0..3, empty=(count==0), full=(count==3). dout is a combinational view of the
+oldest stored entry, or 0 when empty. No empty-state fall-through.
+Using occupancy immediately BEFORE the rising edge:
+accepted_pop = pop && !empty;
+accepted_push = push && (!full || accepted_pop).
+Apply both accepted operations atomically. With empty+push+pop, ignore pop
+and retain the newly pushed entry (count becomes 1). With full+push+pop,
+remove the old head, append din, and remain full. With full+push only,
+ignore push. With empty+pop only, stay empty. Outputs must not be gated
+combinationally by reset, push or pop. Unaccepted operations have no effect.

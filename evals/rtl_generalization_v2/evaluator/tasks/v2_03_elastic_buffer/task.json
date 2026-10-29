@@ -1,0 +1,14 @@
+{
+  "task_id": "v2_03_elastic_buffer",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "ready/valid 停顿、同拍取走并替换",
+  "deliberate_mutant": "满槽即禁止接收，丢失同拍替换能力"
+}

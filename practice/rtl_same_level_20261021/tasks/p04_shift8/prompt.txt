@@ -1,0 +1,21 @@
+实现名为 TopModule 的 8 位可加载串行移位寄存器：
+
+module TopModule (
+    input  wire       clk,
+    input  wire       reset,
+    input  wire       load,
+    input  wire       enable,
+    input  wire       serial_in,
+    input  wire [7:0] data,
+    output reg  [7:0] q
+);
+
+所有时序逻辑在 clk 上升沿工作，reset 为高有效同步复位。
+每个上升沿按下列优先级更新 q：
+1. reset=1：q 置为 8'h00。
+2. 否则若 load=1：q 置为 data；不受 enable 限制。
+3. 否则若 enable=1：q 左移一位，旧 q[7] 丢弃，serial_in 写入 q[0]，即 q <= {q[6:0], serial_in}。
+4. 否则保持。
+
+例如 q=8'h81、serial_in=1，执行一次有效移位后 q=8'h03。
+不要求复位前的初始值；测试会先复位。仅提交可综合模块，不包含测试台。

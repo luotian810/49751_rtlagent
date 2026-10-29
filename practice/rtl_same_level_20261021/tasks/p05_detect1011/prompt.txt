@@ -1,0 +1,16 @@
+实现名为 TopModule 的串行 1011 序列检测器：
+
+module TopModule (
+    input  wire clk,
+    input  wire reset,
+    input  wire in,
+    output reg  detected
+);
+
+1. 在 clk 每个上升沿采样一位 in。
+2. reset 为高有效同步复位；reset=1 的上升沿清除全部匹配历史并令 detected=0，该沿的 in 不计入序列。
+3. reset=0 时，若最近四个有效采样位（含当前位），按时间从早到晚为 1、0、1、1，则 detected 在当前上升沿更新后为 1；否则为 0。
+4. 允许重叠。输入串 1011011 包含两次命中，分别在第 4、7 位采样后产生脉冲。
+5. detected 是寄存输出，不得额外延迟一拍。复位后不足四个采样位时不得命中。
+
+不要求复位前的初始值；测试会先复位。仅提交可综合模块，不包含测试台。

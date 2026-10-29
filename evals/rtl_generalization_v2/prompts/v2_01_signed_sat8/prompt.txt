@@ -1,0 +1,8 @@
+Implement synthesizable SystemVerilog with this exact interface:
+module TopModule(input signed [7:0] a, input signed [7:0] b,
+                 output reg signed [7:0] y, output reg saturated);
+Pure combinational signed saturating addition. Compute the mathematical signed
+sum of a and b without 8-bit truncation. If sum > 127, y=127 and saturated=1.
+If sum < -128, y=-128 and saturated=1. Otherwise y=sum and saturated=0.
+The boundary sums 127 and -128 are representable and must not set saturated.
+No clock, state or latch is allowed.

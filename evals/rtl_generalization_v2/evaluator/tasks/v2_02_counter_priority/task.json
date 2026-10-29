@@ -1,0 +1,14 @@
+{
+  "task_id": "v2_02_counter_priority",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "同步复位、装载优先级、使能与回绕",
+  "deliberate_mutant": "装载错误地覆盖同步复位"
+}

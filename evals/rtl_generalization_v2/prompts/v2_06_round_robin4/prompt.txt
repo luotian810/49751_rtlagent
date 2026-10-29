@@ -1,0 +1,12 @@
+Implement synthesizable SystemVerilog with this exact interface:
+module TopModule(input clk, input reset, input [3:0] req, input accept,
+                 output reg [3:0] grant);
+Four-client round-robin arbiter with a stored priority pointer p (0..3).
+grant is combinational: scan clients p, (p+1)%4, (p+2)%4, (p+3)%4, choose
+the first asserted req bit, and assert only that grant bit. If req==0,
+grant=0. reset is synchronous active high: on its rising edge set p=0,
+with priority over accept. It must not combinationally gate grant.
+On another rising edge, if accept=1 AND grant!=0, move p to the client
+immediately after the currently granted client, modulo 4. Otherwise keep p.
+accept=0 means the priority pointer must not advance; changing req may still
+change the combinational grant. Never grant an unrequested client.

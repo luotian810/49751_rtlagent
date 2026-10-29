@@ -1,0 +1,14 @@
+{
+  "task_id": "v4_01_rotate12",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "非二次幂循环位移、零距离与大于字长的距离",
+  "deliberate_mutant": "循环左移丢失高端回填位，普通逻辑移位替代循环移位"
+}

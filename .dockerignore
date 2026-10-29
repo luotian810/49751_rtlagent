@@ -1,0 +1,6 @@
+.tools
+runs
+out
+**/__pycache__
+.env
+.env.*

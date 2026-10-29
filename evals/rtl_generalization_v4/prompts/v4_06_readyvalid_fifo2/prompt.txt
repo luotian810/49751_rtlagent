@@ -1,0 +1,11 @@
+实现容量为两个 5 位字的 FIFO。接口必须为：
+module TopModule(input clk_i, input reset_ni,
+ input send_valid_i, input [4:0] send_data_i, output send_ready_o,
+ input recv_ready_i, output recv_valid_o, output [4:0] recv_data_o);
+reset_ni 是低有效异步复位，立即清空 FIFO。数据在 clk_i 上升沿传输。
+组合输出：recv_valid_o=1 当且仅当 FIFO 非空；非空时 recv_data_o 是最早未取出的字，空时必须为 0。
+recv_valid_o && recv_ready_i 表示本沿取出一个旧字。
+send_ready_o=1 当且仅当当前未满，或本沿会取出一个旧字；send_valid_i && send_ready_o 表示接收一个新字。
+上述两个握手都依据上升沿之前的状态和输入决定。满时可同拍取出旧头并接收新字；新字进入队尾。
+空时即使 recv_ready_i=1，接收到的新字也只入队，不能本拍直通并被取走。
+无握手时保持数据；复位释放本身不接收输入；不增加延迟、额外端口或修改接口。只提交可综合 Verilog/SystemVerilog。

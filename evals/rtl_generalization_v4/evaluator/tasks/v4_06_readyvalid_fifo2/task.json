@@ -1,0 +1,14 @@
+{
+  "task_id": "v4_06_readyvalid_fifo2",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "ready/valid 握手、满时同拍替换、无直通与异步复位",
+  "deliberate_mutant": "满时即使旧字被取出也拒绝新字，破坏同拍替换"
+}

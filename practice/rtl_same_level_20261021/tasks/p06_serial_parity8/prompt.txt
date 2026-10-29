@@ -1,0 +1,21 @@
+实现名为 TopModule 的每 8 位串行奇偶校验器：
+
+module TopModule (
+    input  wire clk,
+    input  wire reset,
+    input  wire enable,
+    input  wire in,
+    output reg  parity,
+    output reg  valid
+);
+
+全部时序逻辑在 clk 上升沿工作，reset 为高有效同步复位。
+1. reset=1 时清除分组进度、部分结果，并令 parity=0、valid=0；忽略 enable 和 in。
+2. reset=0 且 enable=1 时接收当前 in；enable=0 时不接收，不推进分组进度。
+3. 从复位或上一组完成之后开始，每接收 8 位构成一组，不重叠、不滑动。
+4. 第 8 位被接收的同一个上升沿更新后，parity 等于这 8 位的异或（1 的个数为奇数时为 1），valid=1。
+5. 其余非复位上升沿 valid=0，包含 enable=0 的沿；parity 保持上次完整分组的结果。
+6. 第 8 位完成后下一次有效输入直接开始新组；不足 8 位的部分组遇到 reset 必须丢弃。
+
+例如一组 8 位有三个 1，则完成沿 parity=1、valid=1；下一沿即使 enable=0，valid 也必须清零。
+不要求复位前的初始值；测试会先复位。仅提交可综合模块，不包含测试台。

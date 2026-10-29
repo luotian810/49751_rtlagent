@@ -1,0 +1,8 @@
+实现按每三个有效样本分组的求和器，接口如下：
+module TopModule(input clk_i, input reset_i, input sample_valid_i,
+                 input [4:0] sample_i, output [6:0] sum_o, output sum_valid_o);
+所有状态在 clk_i 上升沿更新。reset_i 是高有效同步复位，优先于采样，复位时清空未完成组，sum_o=0，sum_valid_o=0。
+每当 sample_valid_i=1，接收本拍无符号 sample_i。连续接收的每三个有效样本构成不重叠的一组；
+接受第三个样本的同一个上升沿后，sum_o 更新为这三个样本之和（包含本拍输入），sum_valid_o=1。
+其他上升沿 sum_valid_o=0，sum_o 保持最近已完成组的值。无效输入不改变未完成组的数量或和。
+第三个样本完成后下一有效样本是新组第一个，无需空闲周期。只提交完整可综合 Verilog/SystemVerilog。

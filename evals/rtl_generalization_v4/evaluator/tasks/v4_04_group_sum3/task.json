@@ -1,0 +1,14 @@
+{
+  "task_id": "v4_04_group_sum3",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "非二次幂分组、当前输入包含在结果内、输出有效脉冲与暂停",
+  "deliberate_mutant": "接受第三个样本时只输出旧累计值，漏加当前输入"
+}

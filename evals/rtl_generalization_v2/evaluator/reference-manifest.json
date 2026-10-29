@@ -1,0 +1,8 @@
+{
+  "v2_01_signed_sat8": "tasks/v2_01_signed_sat8/reference/solution.sv",
+  "v2_02_counter_priority": "tasks/v2_02_counter_priority/reference/solution.sv",
+  "v2_03_elastic_buffer": "tasks/v2_03_elastic_buffer/reference/solution.sv",
+  "v2_04_fifo3": "tasks/v2_04_fifo3/reference/solution.sv",
+  "v2_05_enabled_101": "tasks/v2_05_enabled_101/reference/solution.sv",
+  "v2_06_round_robin4": "tasks/v2_06_round_robin4/reference/solution.sv"
+}

@@ -1,0 +1,15 @@
+实现名为 TopModule 的纯组合逻辑模块，接口必须完全一致：
+
+module TopModule (
+    input  wire [7:0] in,
+    output reg  [2:0] index,
+    output reg        valid
+);
+
+功能：8 位高位优先编码器。
+1. 若 in 非零，valid=1，index 为最高有效 1 的位编号，编号从 in[0] 的 0 到 in[7] 的 7。
+2. 若 in=8'h00，valid=0 且 index=3'd0；不得将 index 作为无关项。
+3. 没有时钟、复位或流水线；所有输出都必须有确定赋值，不得推断锁存器。
+
+例：in=8'b00101000 时 index=5、valid=1；in=8'b10000001 时 index=7、valid=1。
+仅提交可综合的完整 Verilog/SystemVerilog 模块，不包含测试台。

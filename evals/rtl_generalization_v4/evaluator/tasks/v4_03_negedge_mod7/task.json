@@ -1,0 +1,14 @@
+{
+  "task_id": "v4_03_negedge_mod7",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "下降沿采样、异步低有效复位、使能暂停与第七次脉冲",
+  "deliberate_mutant": "终值判断提前一次，将七次周期错误变成六次"
+}

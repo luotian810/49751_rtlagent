@@ -1,0 +1,17 @@
+实现名为 TopModule 的纯组合逻辑模块，接口必须完全一致：
+
+module TopModule (
+    input  wire [7:0] in,
+    input  wire [2:0] amount,
+    input  wire       right,
+    output reg  [7:0] out
+);
+
+功能：对 8 位无符号输入做循环移位。
+1. right=0 时向左循环移动 amount 位；right=1 时向右循环移动 amount 位。
+2. amount 的范围为 0..7；amount=0 时 out=in。
+3. 被移出的一端的位必须从另一端回填，不能补零或做算术符号扩展。
+4. 没有时钟、复位或流水线，不得推断锁存器。
+
+例：in=8'b10000001、amount=1，左循环结果为 8'b00000011，右循环结果为 8'b11000000。
+仅提交可综合的完整 Verilog/SystemVerilog 模块，不包含测试台。

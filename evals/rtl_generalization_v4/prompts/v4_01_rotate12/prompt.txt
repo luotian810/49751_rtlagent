@@ -1,0 +1,7 @@
+实现纯组合的 12 位循环移位器。接口必须保持为：
+module TopModule(input [11:0] word_i, input [3:0] distance_i,
+                 input turn_right_i, output [11:0] word_o);
+distance_i 是无符号数 0..15，实际移动距离 k=distance_i 对 12 取余。
+turn_right_i=0 时将 word_i 循环左移 k 位，=1 时循环右移 k 位。
+移出一端的位按原顺序回到另一端，k=0 时 word_o=word_i。
+不要增加时钟、寄存器或延迟。只提交完整可综合的 Verilog/SystemVerilog。

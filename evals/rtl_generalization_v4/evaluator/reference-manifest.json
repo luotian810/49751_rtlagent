@@ -1,0 +1,8 @@
+{
+  "v4_01_rotate12": "tasks/v4_01_rotate12/reference/solution.sv",
+  "v4_02_signed_addsub6": "tasks/v4_02_signed_addsub6/reference/solution.sv",
+  "v4_03_negedge_mod7": "tasks/v4_03_negedge_mod7/reference/solution.sv",
+  "v4_04_group_sum3": "tasks/v4_04_group_sum3/reference/solution.sv",
+  "v4_05_enabled_1101": "tasks/v4_05_enabled_1101/reference/solution.sv",
+  "v4_06_readyvalid_fifo2": "tasks/v4_06_readyvalid_fifo2/reference/solution.sv"
+}

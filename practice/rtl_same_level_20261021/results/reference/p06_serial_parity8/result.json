@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "backend": "iverilog",
+  "log": "$ D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\iverilog.exe -g2012 -s tb -s __rtl_agent_watchdog -s __rtl_agent_waveform -o sim.out rtl.sv tb.sv watchdog.sv waveform.sv\n\n\n$ D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\vvp.exe sim.out\nVCD info: dumpfile wave.vcd opened for output.\nCHECKS=6357 all byte groups, stalls, continuous groups and reset interruptions\nRTL_AGENT_PASS\ntb.sv:74: $finish called at 63576000 (1ps)\n",
+  "elapsed_s": 0.125,
+  "details": {
+    "work_dir": "D:\\fgpa\\readable-rtl-agent\\practice\\rtl_same_level_20261021\\results\\reference\\p06_serial_parity8",
+    "commands": [
+      [
+        "D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb",
+        "-s",
+        "__rtl_agent_watchdog",
+        "-s",
+        "__rtl_agent_waveform",
+        "-o",
+        "sim.out",
+        "rtl.sv",
+        "tb.sv",
+        "watchdog.sv",
+        "waveform.sv"
+      ],
+      [
+        "D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\vvp.exe",
+        "sim.out"
+      ]
+    ],
+    "returncode": 0,
+    "pass_marker_seen": true,
+    "simulation_limit_ns": 1000000,
+    "waveform": "D:\\fgpa\\readable-rtl-agent\\practice\\rtl_same_level_20261021\\results\\reference\\p06_serial_parity8\\wave.vcd",
+    "verification_scope": "generated_testbench_only"
+  },
+  "task_id": "p06_serial_parity8",
+  "checks": 6357
+}

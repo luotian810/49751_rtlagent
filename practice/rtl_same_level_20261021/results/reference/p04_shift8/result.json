@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "backend": "iverilog",
+  "log": "$ D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\iverilog.exe -g2012 -s tb -s __rtl_agent_watchdog -s __rtl_agent_waveform -o sim.out rtl.sv tb.sv watchdog.sv waveform.sv\n\n\n$ D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\vvp.exe sim.out\nVCD info: dumpfile wave.vcd opened for output.\nCHECKS=2337 all shift states and input bits, priorities, holds\nRTL_AGENT_PASS\ntb.sv:50: $finish called at 23376000 (1ps)\n",
+  "elapsed_s": 0.094,
+  "details": {
+    "work_dir": "D:\\fgpa\\readable-rtl-agent\\practice\\rtl_same_level_20261021\\results\\reference\\p04_shift8",
+    "commands": [
+      [
+        "D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb",
+        "-s",
+        "__rtl_agent_watchdog",
+        "-s",
+        "__rtl_agent_waveform",
+        "-o",
+        "sim.out",
+        "rtl.sv",
+        "tb.sv",
+        "watchdog.sv",
+        "waveform.sv"
+      ],
+      [
+        "D:\\fgpa\\readable-rtl-agent\\.tools\\iverilog\\bin\\vvp.exe",
+        "sim.out"
+      ]
+    ],
+    "returncode": 0,
+    "pass_marker_seen": true,
+    "simulation_limit_ns": 1000000,
+    "waveform": "D:\\fgpa\\readable-rtl-agent\\practice\\rtl_same_level_20261021\\results\\reference\\p04_shift8\\wave.vcd",
+    "verification_scope": "generated_testbench_only"
+  },
+  "task_id": "p04_shift8",
+  "checks": 2337
+}

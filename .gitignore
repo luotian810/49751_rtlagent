@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+out/
+outputs/
+runs/
+*.log
+*.jou
+*.wlf
+*.vcd
+*.vpd
+.Xil/
+xsim.dir/
+work/
+models/
+*.key
+*.pem
+*.lic
+.tools/
+
+# Large model weights and local notebooks
+*.gguf
+*.safetensors
+*.ckpt
+.ipynb_checkpoints/
+# Development preflight simulations and EDA build directories
+**/preflight/
+**/work_*/
+*.vvp
+*.dcp
+*.o

@@ -1,0 +1,14 @@
+{
+  "task_id": "v4_05_enabled_1101",
+  "top": "TopModule",
+  "tb_top": "tb",
+  "part": "xczu3eg-sbva484-1-e",
+  "period_ns": 5,
+  "reference": "reference/solution.sv",
+  "reference_module": "ref.sv",
+  "testbench": "tb.sv",
+  "extra_files": [],
+  "source": "original_local_development_fixture",
+  "topic": "重叠序列检测、使能暂停与脉冲清除",
+  "deliberate_mutant": "暂停使能时保持上一拍 match 脉冲，不按规格清零"
+}

@@ -1,0 +1,9 @@
+实现如下计数模块，严格按下降沿采样：
+module TopModule(input tick_i, input arst_ni, input clear_i, input advance_i,
+                 output [2:0] position_o, output wrap_o);
+arst_ni 是低有效异步复位，拉低后不等待时钟立即使 position_o=0、wrap_o=0。
+正常情况下仅在 tick_i 的下降沿更新。优先级：clear_i > advance_i。
+clear_i=1 时两个输出清零。否则 advance_i=1 时 position_o 以 0,1,2,3,4,5,6,0 循环；
+仅从旧 position_o=6 更新到 0 的那个下降沿使 wrap_o=1，其他下降沿 wrap_o=0。
+advance_i=0 时 position_o 保持、wrap_o=0。arst_ni 释放本身不得改变输出。
+只提交完整可综合的 Verilog/SystemVerilog。
