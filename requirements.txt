@@ -1,4 +1,4 @@
 # Core agent, local scripts and the original baseline use Python standard library.
 # Python >= 3.10 is required. EDA tools are installed separately.
-# The HTTP service also uses the standard library. The separate local vLLM
-# runtime belongs in the target official image with a compatible ROCm version.
+# The HTTP service also uses the standard library. The fixed llama.cpp ROCm
+# runtime is supplied by the pinned official FPGA-CHINA image; see model/MODEL.md.

@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V8：前置展开检查，按实际进展修复和保留候选
 
 后续状态：V8 已在固定千问上完成 21 题实测，功能 7/21、生成 1026.359 秒，费用 1 积分且实例已销毁，见 [完整测试与分析](v8_qwen_hackathon_20261026.md)。以下保留当时迭代或平台启动故障的历史记录。
@@ -8,7 +10,7 @@
 
 两轮 V6 共 42 个最终 RTL 与各自首稿逐字节相同，11 次 RTL 修复花费 100.837 秒，未改变最终提交代码。多个样本连续三轮仍有同类编译错误；V7 已取回的优先编码器则生成非法语法并重复返回同一候选。Vivado 原预检只运行 xvlog，必须等模型生成合法测试台后才进入 xelab。内部候选分级还把语法通过、展开失败和实际功能失配放在同级。
 
-证据见 [V7 局部结果及综合诊断](v7_qwen_retry_20261025.md)、[V6 修复产物核对](../../output/rtl-v7-diagnosis-20261025/historical-repair-audit.json)。V7 其余 13 题的最终结果仍未取回，本轮不为缺失数据补造结论。
+证据见 [V7 局部结果及综合诊断](v7_qwen_retry_20261025.md)、V6 修复产物核对（开发归档路径，未随库交付：`../../output/rtl-v7-diagnosis-20261025/historical-repair-audit.json`）。V7 其余 13 题的最终结果仍未取回，本轮不为缺失数据补造结论。
 
 本版只处理编译/展开及修复证据这一类通用问题。V7 的 auto 激励、验证计划契约、盲期望复核保持原样；它们的真实采用率和收益仍需完整千问数据验证。模型权重、量化、32768 上下文、单槽、thinking=false、采样和调用预算不变。官方 baseline、服务入口、独立判题脚本未修改，规则沿用截至 2026-10-24 核对的 RTL `51fbf8d`，本轮未重新核对远端规则。
 
@@ -38,9 +40,9 @@
 
 ## 交付和下一轮观测
 
-- [V7 修改前备份](../../backups/rtl-v7-before-v8-20261026.zip)、[V8 源码包](../../output/rtl-v8-iteration-20261026/readable-rtl-agent-v8.zip)
-- [完整回归](../../output/rtl-v8-iteration-20261026/all-tests.json)、[日志](../../output/rtl-v8-iteration-20261026/all-tests.log)
-- [Vivado 工具控制](../../output/rtl-v8-iteration-20261026/vivado-controls.json)、[流程控制](../../output/rtl-v8-iteration-20261026/vivado-flow.json)、[诊断回放](../../output/rtl-v8-iteration-20261026/diagnostic-replay.json)
-- [实验记录](../../output/rtl-v8-iteration-20261026/EXPERIMENT.md)、[配置与文件核对](../../output/rtl-v8-iteration-20261026/validation.json)
+- V7 修改前备份（开发归档路径，未随库交付：`../../backups/rtl-v7-before-v8-20261026.zip`）、V8 源码包（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/readable-rtl-agent-v8.zip`）
+- 完整回归（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/all-tests.json`）、日志（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/all-tests.log`）
+- Vivado 工具控制（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/vivado-controls.json`）、流程控制（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/vivado-flow.json`）、诊断回放（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/diagnostic-replay.json`）
+- 实验记录（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/EXPERIMENT.md`）、配置与文件核对（开发归档路径，未随库交付：`../../output/rtl-v8-iteration-20261026/validation.json`）
 
 后续按项目测试技能只测最新版，保持既定 Qwen，重点观察：编译失败经修复转成功的数量、展开失败拦截数、重复错误数、最终选中非首稿数、功能通过率、验证计划调用数及总耗时。自检 oracle 误报和时序规格落实仍是未解决问题；这版不以本地 234 项通过声称达到前 70 分或泛化提升。收费测试需要有效的新预算和可靠的计费停止措施，本轮没有启动收费实例。

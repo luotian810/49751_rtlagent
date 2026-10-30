@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V10 固定千问完整题集开发测试
 
 **21/21 题已有可核验结果：8 个 L3、9 个 L1、4 个 L0；功能通过 8/21（38.10%）。** V9 历史同题结果为 7/21（33.33%）；新增功能通过为 4 路轮转仲裁，原有七题功能通过均保留。生成总耗时从 903.863 秒增至 1141.123 秒（+26.25%），所以本轮只观察到一题功能增加，没有提速证据。
@@ -62,4 +64,4 @@ L0 表示未通过编译；L1 表示编译通过但功能仿真失败；本轮�
 
 本轮 10+3 积分授权已关闭，无可继续消费余额。前一独立七题批次另外消费 1 积分，因此本次 V10 两批完整覆盖累计 14 积分。详见费用与事故原始记录，不与历史 V9 费用混算。
 
-[全部逐题数据](../../output/rtl-v10-qwen-complete-20261027/coverage/all-tasks.csv) · [组合覆盖核验](../../output/rtl-v10-qwen-complete-20261027/coverage/coverage.json) · [本批完整性核验](../../output/rtl-v10-qwen-complete-20261027/verification.json) · [本批原始证据](../../output/rtl-v10-qwen-complete-20261027/cloud-evidence.zip) · [本批机制诊断](../../output/rtl-v10-qwen-complete-20261027/analysis/runtime-diagnostics.json) · [费用及清理](../../output/rtl-v10-qwen-complete-20261027/cleanup.json) · [停止保障事故](../../output/rtl-v10-qwen-complete-20261027/budget-control-incident.json) · [无活动实例证明](../../output/rtl-v10-qwen-complete-20261027/cloud-no-active-instance.jpg) · [最终余额](../../output/rtl-v10-qwen-complete-20261027/cloud-final-balance.jpg) · [前批七题报告](v10_qwen_partial_20261027.md)
+全部逐题数据（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/coverage/all-tasks.csv`） · 组合覆盖核验（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/coverage/coverage.json`） · 本批完整性核验（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/verification.json`） · 本批原始证据（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/cloud-evidence.zip`） · 本批机制诊断（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/analysis/runtime-diagnostics.json`） · 费用及清理（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/cleanup.json`） · 停止保障事故（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/budget-control-incident.json`） · 无活动实例证明（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/cloud-no-active-instance.jpg`） · 最终余额（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-complete-20261027/cloud-final-balance.jpg`） · [前批七题报告](v10_qwen_partial_20261027.md)

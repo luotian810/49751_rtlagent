@@ -1,8 +1,10 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V9：减少格式恢复和无效修复（2026-10-27）
 
 **后续固定千问实测已完成：V9 功能 7/21、生成阶段 903.863 秒、费用 1 积分，实例已销毁，见 [完整测试与分析](v9_qwen_hackathon_20261027.md)。** 以下记录为本地迭代阶段，当时没有模型新样本、云实例或积分消费；V8 的 7/21 不被当作 V9 成绩。工作于 10 月 26 日开始，27 日完成，因此证据和备份目录保留起始日期。
 
-改动前已保存 [V8 备份](../../backups/rtl-v8-before-v9-20261026.zip)，包含 536 个源码、测试和说明文件，排除运行目录、工具安装和私有环境文件。当前版本为 `2026.10.27-v9-qwen-only`。
+改动前已保存 V8 备份（开发归档路径，未随库交付：`../../backups/rtl-v8-before-v9-20261026.zip`），包含 536 个源码、测试和说明文件，排除运行目录、工具安装和私有环境文件。当前版本为 `2026.10.27-v9-qwen-only`。
 
 ## 改了什么，为什么
 
@@ -38,4 +40,4 @@
 
 语义错误仍是主要风险。更容易执行的错误 oracle 可能增加误判，盲复核也仍可能推导错误。V9 的正确率、端到端速度和未见题泛化均未验证，不能换算为正式前 70 分。下一次按项目测试 skill 只测 V9，保持同一固定千问；云端费用需在有效授权内，已结束 V8 批次的余额不自动沿用。
 
-[本地回归](../../output/rtl-v9-iteration-20261026/all-tests.json) · [逐项日志](../../output/rtl-v9-iteration-20261026/all-tests.log) · [归档回放](../../output/rtl-v9-iteration-20261026/replay.json) · [新增计划参考控制](../../output/rtl-v9-iteration-20261026/replay-controls.json) · [改动与一致性检查](../../output/rtl-v9-iteration-20261026/validation.json) · [源码差异](../../output/rtl-v9-iteration-20261026/runtime.patch) · [V9 交付包](../../output/rtl-v9-iteration-20261026/readable-rtl-agent-v9.zip)
+本地回归（开发归档路径，未随库交付：`../../output/rtl-v9-iteration-20261026/all-tests.json`） · 逐项日志（开发归档路径，未随库交付：`../../output/rtl-v9-iteration-20261026/all-tests.log`） · 归档回放（开发归档路径，未随库交付：`../../output/rtl-v9-iteration-20261026/replay.json`） · 新增计划参考控制（开发归档路径，未随库交付：`../../output/rtl-v9-iteration-20261026/replay-controls.json`） · 改动与一致性检查（开发归档路径，未随库交付：`../../output/rtl-v9-iteration-20261026/validation.json`） · 源码差异（开发归档路径，未随库交付：`../../output/rtl-v9-iteration-20261026/runtime.patch`） · V9 交付包（开发归档路径，未随库交付：`../../output/rtl-v9-iteration-20261026/readable-rtl-agent-v9.zip`）

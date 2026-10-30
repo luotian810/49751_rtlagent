@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # Vivado 接入与实际验证记录
 
 > 历史记录：本文保留 2026-10-02 至 2026-10-04 的验证状态。2026-10-05 已定位中文主机名导致的 UTF-8/CP936 路径问题，并接入进程级 ASCII 主机名修复。最新综合结果与复现方法见 [修复报告](vivado_repair.md)。
@@ -18,21 +20,21 @@
 
 合计每组 712 个采样点，无失配。这里检验的是已保存的生成产物，不是新一轮模型盲测；不能据此计算 pass@1 或 baseline 增益。
 
-- [生成设计 L2 报告](../runs/vivado_2025_2/generated_l2/report.md)
-- [参考实现 L2 报告](../runs/vivado_2025_2/reference_l2/report.md)
+- 生成设计 L2 报告（开发归档路径，未随库交付：`../runs/vivado_2025_2/generated_l2/report.md`）
+- 参考实现 L2 报告（开发归档路径，未随库交付：`../runs/vivado_2025_2/reference_l2/report.md`）
 - [原样公开材料与来源](../vendor/rtlagent2026_selftest/PROVENANCE.md)
 
-三道带注释的教学设计还通过本工程独立自检：popcount8 检查 256 次、detect_1101 检查 2,824 次、lfsr8 检查 5,121 次，共 8,201 次。它们是手写示例，仅用于教学和工具验证。[演示报告](../runs/vivado_2025_2/demo/report.md) 同时记录仿真与综合的不同状态。
+三道带注释的教学设计还通过本工程独立自检：popcount8 检查 256 次、detect_1101 检查 2,824 次、lfsr8 检查 5,121 次，共 8,201 次。它们是手写示例，仅用于教学和工具验证。演示报告（开发归档路径，未随库交付：`../runs/vivado_2025_2/demo/report.md`） 同时记录仿真与综合的不同状态。
 
 各题可查看源码和信号波形：
 
 | 教学源码 | Vivado 导出的 VCD |
 | --- | --- |
-| [popcount8](../demos/popcount8/solution.v) | [wave.vcd](../runs/vivado_2025_2/demo/popcount8/wave.vcd) |
-| [detect_1101](../demos/detect_1101/solution.v) | [wave.vcd](../runs/vivado_2025_2/demo/detect_1101/wave.vcd) |
-| [lfsr8](../demos/lfsr8/solution.v) | [wave.vcd](../runs/vivado_2025_2/demo/lfsr8/wave.vcd) |
+| [popcount8](../demos/popcount8/solution.v) | wave.vcd（开发归档路径，未随库交付：`../runs/vivado_2025_2/demo/popcount8/wave.vcd`） |
+| [detect_1101](../demos/detect_1101/solution.v) | wave.vcd（开发归档路径，未随库交付：`../runs/vivado_2025_2/demo/detect_1101/wave.vcd`） |
+| [lfsr8](../demos/lfsr8/solution.v) | wave.vcd（开发归档路径，未随库交付：`../runs/vivado_2025_2/demo/lfsr8/wave.vcd`） |
 
-完整 Python 测试 **37 项通过、无跳过**，真实仿真后端明确为 Vivado；覆盖正确输出、缺少通过标记、先 PASS 后 FAIL、HDL 时间上限与主机超时等。见 [完整日志](../runs/vivado_2025_2/python_tests.txt)。后续内置公开题目后，又执行适配器的 **8 项定向回归**，见 [适配器日志](../runs/vivado_2025_2/selftest_adapter_tests.txt)。
+完整 Python 测试 **37 项通过、无跳过**，真实仿真后端明确为 Vivado；覆盖正确输出、缺少通过标记、先 PASS 后 FAIL、HDL 时间上限与主机超时等。见 完整日志（开发归档路径，未随库交付：`../runs/vivado_2025_2/python_tests.txt`）。后续内置公开题目后，又执行适配器的 **8 项定向回归**，见 适配器日志（开发归档路径，未随库交付：`../runs/vivado_2025_2/selftest_adapter_tests.txt`）。
 
 ## 修复和接入
 
@@ -65,7 +67,7 @@ exit code: 3221226356 = 0xC0000374 (STATUS_HEAP_CORRUPTION)
 | Vivado `-tempDir` 指定工作目录 | 工具仍在其下建立带系统主机名的目录，同样崩溃 |
 | 最终三道教学设计综合 | 均报告 `error`，保留原始日志 |
 
-[官方参考解控制报告](../runs/vivado_2025_2/reference_control_l3/report.md) 保存上游 `L2 / SYNTH_FAIL` 原字段和本地 `TOOL_CRASH` 说明。这不推翻独立 L2 运行的成功证据，但该次完整 L3 请求不能当作有效综合成绩。
+官方参考解控制报告（开发归档路径，未随库交付：`../runs/vivado_2025_2/reference_control_l3/report.md`） 保存上游 `L2 / SYNTH_FAIL` 原字段和本地 `TOOL_CRASH` 说明。这不推翻独立 L2 运行的成功证据，但该次完整 L3 请求不能当作有效综合成绩。
 
 本机系统版本为 Windows 11 25H2，build 26200.9457。AMD 的 [操作系统支持表](https://www.amd.com/en/support/adaptive-socs-and-fpgas/installer-info-general.html) 将 Windows 11 Enterprise 25H2 对 Vivado 2025.2 标为不支持，对 2026.1 标为支持；本机版本不在 2025.2 支持列表内。另外，Vivado 自动创建的 `.Xil/Vivado-进程号-主机名/` 含中文，超出 [AMD 2025.2 命名约定](https://docs.amd.com/r/2025.2-English/ug973-vivado-release-notes-install-license/Vivado-Naming-Conventions) 列出的字符范围。**这些是已发现的兼容性因素，尚未证明哪个导致本次堆损坏。**
 

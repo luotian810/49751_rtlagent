@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V7 千问测试中断与费用记录
 
 本轮 **没有开始生成样本**。计划的 21 个 V7 样本全部未开始，正确率与生成耗时没有测量值，不能写成 0/21 通过。2026-10-25 11:15（北京时间）已确认云平台显示 **No active instance**，余额 **122**。
@@ -36,9 +38,9 @@ V6 历史两轮的 8/21、7/21 不属于 V7，不作为本轮结果。冻结包 
 
 ## 证据
 
-- [本次最终状态](../../output/rtl-v7-qwen-test-20261024/ACTIVE_RUN.md)、[样本状态](../../output/rtl-v7-qwen-test-20261024/outcome.json)、[费用和清理](../../output/rtl-v7-qwen-test-20261024/cleanup.json)
-- [清理前控制台脱敏记录](../../output/rtl-v7-qwen-test-20261024/cloud-interruption-before-cleanup.txt)、[清理后记录](../../output/rtl-v7-qwen-test-20261024/cloud-after-cleanup.txt)
-- [原始租约](../../output/rtl-v7-qwen-test-20261024/lease.json)、[原始授权](../../output/rtl-v7-qwen-test-20261024/authorization.json)
-- [本地参考控制](../../output/rtl-v7-qwen-test-20261024/local-preflight/summary.json)、[V7 前序工程验证](v7_iteration_20261024.md)
+- 本次最终状态（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/ACTIVE_RUN.md`）、样本状态（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/outcome.json`）、费用和清理（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/cleanup.json`）
+- 清理前控制台脱敏记录（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/cloud-interruption-before-cleanup.txt`）、清理后记录（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/cloud-after-cleanup.txt`）
+- 原始租约（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/lease.json`）、原始授权（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/authorization.json`）
+- 本地参考控制（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/local-preflight/summary.json`）、[V7 前序工程验证](v7_iteration_20261024.md)
 
-![清理后余额 122，No active instance](../../output/rtl-v7-qwen-test-20261024/cloud-after-cleanup.jpg)
+!清理后余额 122，No active instance（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-test-20261024/cloud-after-cleanup.jpg`）

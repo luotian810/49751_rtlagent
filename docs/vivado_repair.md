@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # Vivado 2025.2 综合修复与复验
 
 验证日期：2026-10-05。本机 `D:\vivado\2025.2\Vivado` 的综合崩溃已通过进程级设置修复；最小 AND 电路综合返回 0，并生成有效 DCP。修复保留现有安装、许可证配置和系统电脑名，无需重启。
@@ -10,10 +12,10 @@
 
 | 记录 | 观察结果 |
 | --- | --- |
-| [调用 fopen 前](../runs/vivado_repair_20261005/debug_fopen_path/before_open.json) | `windows_acp=936`；UTF-8 路径为 `.Xil/Vivado-27984-鸡哥/files.rtd`，同一字节按 ANSI 解读为 `.Xil/Vivado-27984-楦″摜/files.rtd` |
-| [调用 fopen 后](../runs/vivado_repair_20261005/debug_fopen_path/after_open.json) | 返回寄存器 `RAX=0`，即空文件指针 |
-| [崩溃记录](../runs/vivado_repair_20261005/debug_fopen_path/crash.json) | 包含 `_stdio_common_vfprintf`、`invalidParamHandler` 与 `0xC0000374` 异常 |
-| [调用路径分析](../runs/vivado_repair_20261005/temp_probe/synth_fprintf_analysis.json) | `files.rtd` 打开后未检查空指针便调用 `fprintf` |
+| 调用 fopen 前（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/debug_fopen_path/before_open.json`） | `windows_acp=936`；UTF-8 路径为 `.Xil/Vivado-27984-鸡哥/files.rtd`，同一字节按 ANSI 解读为 `.Xil/Vivado-27984-楦″摜/files.rtd` |
+| 调用 fopen 后（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/debug_fopen_path/after_open.json`） | 返回寄存器 `RAX=0`，即空文件指针 |
+| 崩溃记录（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/debug_fopen_path/crash.json`） | 包含 `_stdio_common_vfprintf`、`invalidParamHandler` 与 `0xC0000374` 异常 |
+| 调用路径分析（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/temp_probe/synth_fprintf_analysis.json`） | `files.rtd` 打开后未检查空指针便调用 `fprintf` |
 
 栈记录部分名称来自最近邻符号。偏移很大的名称只能用于辅助定位，不能当作精确函数名或单独的根因证据；结论依据路径字节、代码页、`fopen` 返回值和修复对照共同确认。
 
@@ -60,11 +62,11 @@ $env:PYTHON_EXE = 'C:\Users\25119\.cache\codex-runtimes\codex-primary-runtime\de
 
 | 检查 | 实际结果与证据 |
 | --- | --- |
-| 最小 AND 电路 | [result.json](../runs/vivado_repair_20261005/ascii_winsock_control/result.json) 为 `passed`、返回码 0；[DCP](../runs/vivado_repair_20261005/ascii_winsock_control/synthesized.dcp) 已生成 |
-| Python 测试 | [完整日志](../runs/vivado_repair_20261005/python_tests.txt)：43 项通过 |
-| 生成设计公开样例 | [L3 报告](../runs/vivado_repair_20261005/generated_l3/report.md)：3 道全部通过，合计 712 个采样点零失配 |
-| 官方参考实现 | [L3 报告](../runs/vivado_repair_20261005/reference_l3/report.md)：3 道全部通过，合计 712 个采样点零失配；父终端清除覆盖变量后，由 Python 工具层自动配置子进程 |
-| 教学设计一键入口 | [演示报告](../runs/vivado_repair_20261005/demo/report.md)：3 道仿真与综合全部通过，8,201 次检查，并生成 DCP、资源和时序报告 |
+| 最小 AND 电路 | result.json（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/ascii_winsock_control/result.json`） 为 `passed`、返回码 0；DCP（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/ascii_winsock_control/synthesized.dcp`） 已生成 |
+| Python 测试 | 完整日志（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/python_tests.txt`）：43 项通过 |
+| 生成设计公开样例 | L3 报告（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/generated_l3/report.md`）：3 道全部通过，合计 712 个采样点零失配 |
+| 官方参考实现 | L3 报告（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/reference_l3/report.md`）：3 道全部通过，合计 712 个采样点零失配；父终端清除覆盖变量后，由 Python 工具层自动配置子进程 |
+| 教学设计一键入口 | 演示报告（开发归档路径，未随库交付：`../runs/vivado_repair_20261005/demo/report.md`）：3 道仿真与综合全部通过，8,201 次检查，并生成 DCP、资源和时序报告 |
 
 三道生成设计的综合资源与时序估计如下，官方参考实现本轮结果相同：
 

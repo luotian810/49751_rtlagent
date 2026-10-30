@@ -4,17 +4,8 @@
 set -eo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/defaults.sh"
 PYTHON_COMMAND="${PYTHON_EXE:-python3}"
-export AGENT_TMP="${AGENT_TMP:-/var/tmp}"
-export EDA_TMP="${EDA_TMP:-/var/tmp/eda}"
-export XILINXD_LICENSE_FILE="${XILINXD_LICENSE_FILE:-2100@vivado-lic.fpgachina.svc.cluster.local}"
-export FLEXLM_TIMEOUT="${FLEXLM_TIMEOUT:-300000000}"
-export PORT="${PORT:-8000}"
-export MODEL_NAME="${MODEL_NAME:-${LLM_MODEL:-}}"
-if [[ -z "$MODEL_NAME" && -n "${MODEL:-}" ]]; then
-    export MODEL_NAME="$(basename "$MODEL")"
-fi
-export LLM_MODEL="${LLM_MODEL:-$MODEL_NAME}"
 if [[ -z "$MODEL_NAME" || "$MODEL_NAME" != "$LLM_MODEL" ]]; then
     printf 'Set MODEL_NAME and LLM_MODEL to the same local served model name.\n' >&2
     exit 2
@@ -25,7 +16,6 @@ case "$LLM_BASE_URL" in
     *) printf 'start.sh requires the local inference URL matching PORT.\n' >&2; exit 2 ;;
 esac
 LOG_DIR="${SERVE_LOG_DIR:-$AGENT_TMP/serve-logs}"
-INFERENCE_BACKEND="${INFERENCE_BACKEND:-vllm}"
 case "$INFERENCE_BACKEND" in
     vllm|llamacpp) INFERENCE_SCRIPT="$HERE/$INFERENCE_BACKEND.sh" ;;
     *) printf 'INFERENCE_BACKEND must be vllm or llamacpp.\n' >&2; exit 2 ;;

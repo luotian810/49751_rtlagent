@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # 投题令牌与公网隧道验证状态
 
 2026-10-25 23:46（北京时间）已补齐完整公网单题链路，固定千问返回代码独立达到 Vivado 2026.1 L3，测试实例已销毁，实际使用 1 积分。当前结论见 [完整链路报告](fullchain_validation_20261025.md)。网址未报送，没有正式投题成绩。
@@ -33,4 +35,4 @@
 
 解决预算内的独立销毁后，部署固定 Qwen3-14B-Q4_K_M，核对实际权重、32768 上下文、单槽、thinking=false；后台启动模型与投题服务，先确认本地 ready=true，再安装官方 rc-tunnel、expose 7860。从用户电脑经实际 HTTPS URL 验证鉴权、ready=true/track=rtl，并完成一次公开题异步投题及独立仿真。保存证据后销毁本次实例，保留 /workspace，网址不报送。
 
-部署包已准备，未声称云端执行成功。详细证据见 [测试目录](../../output/rtl-tunnel-validation-20261025/README.md)、[本机鉴权结果](../../output/rtl-tunnel-validation-20261025/recheck-local-auth/result.json)。
+部署包已准备，未声称云端执行成功。详细证据见 测试目录（开发归档路径，未随库交付：`../../output/rtl-tunnel-validation-20261025/README.md`）、本机鉴权结果（开发归档路径，未随库交付：`../../output/rtl-tunnel-validation-20261025/recheck-local-auth/result.json`）。

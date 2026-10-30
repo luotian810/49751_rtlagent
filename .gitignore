@@ -33,3 +33,6 @@ models/
 *.vvp
 *.dcp
 *.o
+
+# Reproducible practice outputs are retained outside the submission tree.
+practice/**/results/

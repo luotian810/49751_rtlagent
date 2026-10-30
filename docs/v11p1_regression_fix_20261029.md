@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V11.1：撤回提示重写，修正新增位宽误判
 
 按“不求创新，只修复V11新增问题”的范围完成V11.1。修复前V11已备份；315项本地回归全部通过。当前仍为**待固定千问实测**，本轮没有生成新模型样本、使用云端积分或改写历史判级。
@@ -18,4 +20,4 @@ V11的默认无独立行为规划、明确文字接口解析和复位X/Z盲复�
 
 固定Qwen3-14B-Q4_K_M及其权重、量化、32768上下文、服务和推理配置保持原样；官方基线、调用预算、判题器及已有版本记录均核对不变。规则依据沿用2026-10-27核对的官方RTL提交`fc8e26a5828b7222e9db439cee29128bcf4f8865`，本轮没有声称已重新核对远端最新规则。V11历史7/21、V10历史8/21和V11耗时减少25.15%均不属于V11.1新成绩。V11.1的新正确率、耗时及正式分数尚未测量。
 
-[修复前备份](../../backups/rtl-v11-before-v11p1-20261029.zip) · [完整回归](../../output/rtl-v11p1-fix-20261029/all-tests.json) · [日志](../../output/rtl-v11p1-fix-20261029/all-tests.log) · [归档重放](../../output/rtl-v11p1-fix-20261029/replay.json) · [一致性核对](../../output/rtl-v11p1-fix-20261029/validation.json) · [源码差异](../../output/rtl-v11p1-fix-20261029/runtime.patch) · [源码包](../../output/rtl-v11p1-fix-20261029/readable-rtl-agent-v11.1.zip)
+修复前备份（开发归档路径，未随库交付：`../../backups/rtl-v11-before-v11p1-20261029.zip`） · 完整回归（开发归档路径，未随库交付：`../../output/rtl-v11p1-fix-20261029/all-tests.json`） · 日志（开发归档路径，未随库交付：`../../output/rtl-v11p1-fix-20261029/all-tests.log`） · 归档重放（开发归档路径，未随库交付：`../../output/rtl-v11p1-fix-20261029/replay.json`） · 一致性核对（开发归档路径，未随库交付：`../../output/rtl-v11p1-fix-20261029/validation.json`） · 源码差异（开发归档路径，未随库交付：`../../output/rtl-v11p1-fix-20261029/runtime.patch`） · 源码包（开发归档路径，未随库交付：`../../output/rtl-v11p1-fix-20261029/readable-rtl-agent-v11.1.zip`）

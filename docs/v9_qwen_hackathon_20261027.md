@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V9 固定千问完整测试与分析（2026-10-27）
 
 **V9 功能通过 7/21（33.3%），全部 L3；L0=3、L1=11。通过题集合与 V8 相同，本轮没有功能净增益。生成阶段累计 903.863 秒，较 V8 历史批次的 1026.359 秒减少 11.94%。**
@@ -60,27 +62,27 @@
 
 | 题目 | V8→V9 等级 | V9 生成秒 | 调用 | V9 最终候选自检 |
 | --- | ---: | ---: | ---: | --- |
-| [gen_v4/v4_01_rotate12](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_01_rotate12/solution.v) | L0→L1 | 47.829 | 4 | FAIL |
-| [gen_v4/v4_02_signed_addsub6](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_02_signed_addsub6/solution.v) | L1→L0 | 34.190 | 3 | 未执行 |
-| [gen_v4/v4_03_negedge_mod7](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_03_negedge_mod7/solution.v) | L1→L1 | 52.564 | 4 | FAIL |
-| [gen_v4/v4_04_group_sum3](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_04_group_sum3/solution.v) | L1→L1 | 48.780 | 3 | FAIL |
-| [gen_v4/v4_05_enabled_1101](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_05_enabled_1101/solution.v) | L0→L1 | 84.137 | 5 | FAIL |
-| [gen_v4/v4_06_readyvalid_fifo2](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_06_readyvalid_fifo2/solution.v) | L1→L1 | 58.604 | 3 | FAIL |
-| [practice/p01_priority8](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p01_priority8/solution.v) | L3→L3 | 36.444 | 4 | FAIL |
-| [practice/p02_rotate8](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p02_rotate8/solution.v) | L0→L0 | 22.550 | 3 | 未执行 |
-| [practice/p03_sat_counter4](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p03_sat_counter4/solution.v) | L3→L3 | 57.242 | 4 | FAIL |
-| [practice/p04_shift8](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p04_shift8/solution.v) | L3→L3 | 21.794 | 2 | PASS |
-| [practice/p05_detect1011](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p05_detect1011/solution.v) | L1→L1 | 36.668 | 3 | TB 编译失败 |
-| [practice/p06_serial_parity8](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p06_serial_parity8/solution.v) | L1→L1 | 75.147 | 4 | FAIL |
-| [gen_v2/v2_01_signed_sat8](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_01_signed_sat8/solution.v) | L3→L3 | 21.541 | 2 | PASS |
-| [gen_v2/v2_02_counter_priority](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_02_counter_priority/solution.v) | L3→L3 | 28.111 | 2 | PASS |
-| [gen_v2/v2_03_elastic_buffer](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_03_elastic_buffer/solution.v) | L1→L1 | 45.534 | 3 | 未执行 |
-| [gen_v2/v2_04_fifo3](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_04_fifo3/solution.v) | L1→L0 | 51.997 | 3 | 未执行 |
-| [gen_v2/v2_05_enabled_101](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_05_enabled_101/solution.v) | L1→L1 | 38.210 | 3 | 未执行 |
-| [gen_v2/v2_06_round_robin4](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_06_round_robin4/solution.v) | L1→L1 | 56.443 | 4 | FAIL |
-| [public/ex01_popcount8](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/public/ex01_popcount8/solution.v) | L3→L3 | 24.543 | 3 | PASS |
-| [public/ex02_detect_1101](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/public/ex02_detect_1101/solution.v) | L1→L1 | 24.831 | 3 | 未执行 |
-| [public/ex03_lfsr8](../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/public/ex03_lfsr8/solution.v) | L3→L3 | 36.704 | 3 | 未执行 |
+| gen_v4/v4_01_rotate12（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_01_rotate12/solution.v`） | L0→L1 | 47.829 | 4 | FAIL |
+| gen_v4/v4_02_signed_addsub6（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_02_signed_addsub6/solution.v`） | L1→L0 | 34.190 | 3 | 未执行 |
+| gen_v4/v4_03_negedge_mod7（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_03_negedge_mod7/solution.v`） | L1→L1 | 52.564 | 4 | FAIL |
+| gen_v4/v4_04_group_sum3（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_04_group_sum3/solution.v`） | L1→L1 | 48.780 | 3 | FAIL |
+| gen_v4/v4_05_enabled_1101（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_05_enabled_1101/solution.v`） | L0→L1 | 84.137 | 5 | FAIL |
+| gen_v4/v4_06_readyvalid_fifo2（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v4/v4_06_readyvalid_fifo2/solution.v`） | L1→L1 | 58.604 | 3 | FAIL |
+| practice/p01_priority8（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p01_priority8/solution.v`） | L3→L3 | 36.444 | 4 | FAIL |
+| practice/p02_rotate8（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p02_rotate8/solution.v`） | L0→L0 | 22.550 | 3 | 未执行 |
+| practice/p03_sat_counter4（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p03_sat_counter4/solution.v`） | L3→L3 | 57.242 | 4 | FAIL |
+| practice/p04_shift8（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p04_shift8/solution.v`） | L3→L3 | 21.794 | 2 | PASS |
+| practice/p05_detect1011（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p05_detect1011/solution.v`） | L1→L1 | 36.668 | 3 | TB 编译失败 |
+| practice/p06_serial_parity8（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/practice/p06_serial_parity8/solution.v`） | L1→L1 | 75.147 | 4 | FAIL |
+| gen_v2/v2_01_signed_sat8（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_01_signed_sat8/solution.v`） | L3→L3 | 21.541 | 2 | PASS |
+| gen_v2/v2_02_counter_priority（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_02_counter_priority/solution.v`） | L3→L3 | 28.111 | 2 | PASS |
+| gen_v2/v2_03_elastic_buffer（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_03_elastic_buffer/solution.v`） | L1→L1 | 45.534 | 3 | 未执行 |
+| gen_v2/v2_04_fifo3（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_04_fifo3/solution.v`） | L1→L0 | 51.997 | 3 | 未执行 |
+| gen_v2/v2_05_enabled_101（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_05_enabled_101/solution.v`） | L1→L1 | 38.210 | 3 | 未执行 |
+| gen_v2/v2_06_round_robin4（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/gen_v2/v2_06_round_robin4/solution.v`） | L1→L1 | 56.443 | 4 | FAIL |
+| public/ex01_popcount8（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/public/ex01_popcount8/solution.v`） | L3→L3 | 24.543 | 3 | PASS |
+| public/ex02_detect_1101（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/public/ex02_detect_1101/solution.v`） | L1→L1 | 24.831 | 3 | 未执行 |
+| public/ex03_lfsr8（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/results/generated/latest/public/ex03_lfsr8/solution.v`） | L3→L3 | 36.704 | 3 | 未执行 |
 
 ## 复现与清理证据
 
@@ -91,4 +93,4 @@
 - One-click 先因节点容量/匹配不足失败，费用 0；用户随后明确同意 Hackathon 人工兜底。实际未使用自动销毁；操作者在导出核验后提前完成销毁，未触发用户接管。原始租约为北京时间 13:18:29，停止计算 14:58:29、最晚销毁 15:08:29，租约字节本地/云端一致。
 - 余额曾被首页缓存显示为 150，刷新用量页面和最终首页均为 149；按刷新后的证明确认实际费用 1 积分。持久化选择和销毁确认均保留，未请求删除持久盘。本批授权关闭，未用的 2 积分不自动转到下一批。
 
-[完整证据](../../output/rtl-v9-qwen-hackathon-20261027/cloud-evidence.zip) · [完整批次核验](../../output/rtl-v9-qwen-hackathon-20261027/verification.json) · [逐题 CSV](../../output/rtl-v9-qwen-hackathon-20261027/analysis/latest.csv) · [机制统计](../../output/rtl-v9-qwen-mechanisms-20261027/mechanisms.json) · [原始诊断与 TB 字节来源](../../output/rtl-v9-qwen-hackathon-20261027/analysis/runtime-diagnostics.json) · [本地参考控制](../../output/rtl-v9-qwen-hackathon-20261027/oracle-controls/summary.json) · [清理与费用](../../output/rtl-v9-qwen-hackathon-20261027/cleanup.json) · [无实例及余额截图](../../output/rtl-v9-qwen-hackathon-20261027/cloud-final-balance-header.png)
+完整证据（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/cloud-evidence.zip`） · 完整批次核验（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/verification.json`） · 逐题 CSV（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/analysis/latest.csv`） · 机制统计（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-mechanisms-20261027/mechanisms.json`） · 原始诊断与 TB 字节来源（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/analysis/runtime-diagnostics.json`） · 本地参考控制（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/oracle-controls/summary.json`） · 清理与费用（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/cleanup.json`） · 无实例及余额截图（开发归档路径，未随库交付：`../../output/rtl-v9-qwen-hackathon-20261027/cloud-final-balance-header.png`）

@@ -327,7 +327,8 @@ class ServiceTests(unittest.TestCase):
     def test_health_checks_model_auth_and_reports_unknown_vram(self):
         with patch.object(api.urllib.request, "urlopen", return_value=self.model_response([
             {"id": "test-model"}])) as open_url, patch.object(api.Path, "is_file", return_value=True), \
-                patch.object(api, "_simulator_available", return_value=True):
+                patch.object(api, "_simulator_available", return_value=True), \
+                patch.object(api, "_vram_gb", return_value=None):
             result = api.health()
         self.assertTrue(result["ready"])
         self.assertEqual(result["track"], "rtl")
@@ -355,12 +356,37 @@ class ServiceTests(unittest.TestCase):
         self.assertFalse(result["ready"])
         self.assertEqual(result["status"], "simulator_unavailable")
 
-    def test_vram_accepts_only_finite_measurements(self):
-        for value in ("nan", "inf", "-1", "invalid"):
-            os.environ["VRAM_GB"] = value
-            self.assertIsNone(api._vram_gb())
+    def test_vram_reads_assigned_card_each_time_and_ignores_host_cards(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            dev, sysfs = root / "dev", root / "sys"
+            dev.mkdir()
+            (dev / "renderD134").touch()
+            card = sysfs / "renderD134" / "device"
+            card.mkdir(parents=True)
+            (card / "vendor").write_text("0x1002\n")
+            (card / "mem_info_vram_total").write_text("48000000000")
+            used = card / "mem_info_vram_used"
+            # A host card visible in sysfs alone must not be included.
+            other = sysfs / "renderD128" / "device"
+            other.mkdir(parents=True)
+            (other / "mem_info_vram_used").write_text("47000000000")
+            os.environ["VRAM_GB"] = "99"  # Old startup snapshot must be ignored.
+            used.write_text("14500000000")
+            self.assertEqual(api._vram_gb(dev, sysfs), 14.5)
+            used.write_text("15000000000")
+            self.assertEqual(api._vram_gb(dev, sysfs), 15.0)
+            for invalid in ("-1", "48000000001", "nan", "unavailable"):
+                used.write_text(invalid)
+                self.assertIsNone(api._vram_gb(dev, sysfs))
+            used.write_text("15000000000")
+            (dev / "renderD128").touch()
+            self.assertIsNone(api._vram_gb(dev, sysfs))
+
+    def test_vram_unknown_without_assigned_device_does_not_use_environment(self):
         os.environ["VRAM_GB"] = "21.4"
-        self.assertEqual(api._vram_gb(), 21.4)
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertIsNone(api._vram_gb(Path(directory), Path(directory)))
 
     def test_agent_launch_preserves_output_on_failure_and_redacts_trace(self):
         commands = []

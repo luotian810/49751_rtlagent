@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V6 固定千问复测结果（2026-10-24）
 
 本轮 **7/21 个样本通过独立功能判定，全部达到 L3**；前一轮相同 V6 为 8/21。本轮没有新增通过题，`practice/p05_detect1011` 从 L3 变为 L1；`public/ex02_detect_1101` 从 L0 变为 L1，仍未通过功能。
@@ -30,7 +32,7 @@
 
 18 个计划中，7 个最终合法；另外 11 个未形成可执行计划，其中一题格式恢复在 47.7 秒预算处超时。计划生成及格式恢复共 34 次调用、720.097 秒，占模型调用累计时间 **68.3%**。占比较上轮 72.3% 低，但绝对耗时反而增加 20.008 秒，不能写成该环节提速。
 
-本地 Icarus 用正确参考复核了全部 7 套实际执行的生成 TB：4 套接受，3 套误拒绝。两轮共同的 5 套控制均为 4/5；新增的两套控制都误拒绝，因此 4/5 与 4/7 的覆盖集合不同。该控制不改变云端判级，也不证明随机覆盖充分。详细机制与根因见 [失败归因](../../output/rtl-v6-qwen-retest-20261024/FINDINGS.md)。
+本地 Icarus 用正确参考复核了全部 7 套实际执行的生成 TB：4 套接受，3 套误拒绝。两轮共同的 5 套控制均为 4/5；新增的两套控制都误拒绝，因此 4/5 与 4/7 的覆盖集合不同。该控制不改变云端判级，也不证明随机覆盖充分。详细机制与根因见 失败归因（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/FINDINGS.md`）。
 
 ## 模型、环境与费用
 
@@ -70,8 +72,8 @@
 
 ## 证据
 
-[逐题 CSV](../../output/rtl-v6-qwen-retest-20261024/analysis/latest.csv) · [完整性核验](../../output/rtl-v6-qwen-retest-20261024/verification.json) · [原始证据包](../../output/rtl-v6-qwen-retest-20261024/cloud-evidence.zip) · [冻结输入](../../output/rtl-v6-qwen-retest-20261024/cloud-input.zip) · [机制统计](../../output/rtl-v6-retest-analysis-20261024/mechanisms.json) · [归因检查](../../output/rtl-v6-qwen-retest-20261024/inspection.json) · [清理记录](../../output/rtl-v6-qwen-retest-20261024/cleanup.json) · [前一轮 V6](v6_qwen_test_20261024.md)
+逐题 CSV（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/analysis/latest.csv`） · 完整性核验（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/verification.json`） · 原始证据包（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/cloud-evidence.zip`） · 冻结输入（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/cloud-input.zip`） · 机制统计（开发归档路径，未随库交付：`../../output/rtl-v6-retest-analysis-20261024/mechanisms.json`） · 归因检查（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/inspection.json`） · 清理记录（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/cleanup.json`） · [前一轮 V6](v6_qwen_test_20261024.md)
 
 原始证据包 978707 字节，1053 个索引成员，0 排除；SHA256 `a4d5099cfeae78b38a0012048b11af7e27701990e0b45d3211d4aff56434895d`。冻结输入 307918 字节，SHA256 `c83af46acd10a0b6ac737d410558e68b681b0c37004d12eea266d388a2e5ec49`。
 
-![实例已销毁，余额 135](../../output/rtl-v6-qwen-retest-20261024/cloud-no-active-instance.jpg)
+!实例已销毁，余额 135（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/cloud-no-active-instance.jpg`）

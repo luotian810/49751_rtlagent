@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V7 千问测试：局部结果、证据缺口与费用
 
 本轮尚不能给出完整 21 题的正确率、总耗时或提升结论。最后保存的 11:52:44（北京时间）进展包含 **8 题独立判级：5 个 L0、3 个 L1，功能通过 0 个**；第 9 题已经开始。其余 13 题的最终结果没有取回，不能记成失败、未开始或通过。
@@ -74,7 +76,7 @@ V6 复测 7 套实际执行的生成测试台，用正确参考替换 DUT 后有
 
 V6 复测原始代码中可见：题面要求下降沿却生成上升沿；组合 ready/valid/data 被改为寄存输出；同拍接收/发送事件处理错误；消费后不能清空占用状态；多套历史状态彼此不一致。共同缺口是没有把“接受事件、旧状态、新状态、输出更新/保持”逐项落实到代码和可执行检查，而非某一道题缺固定答案。
 
-本次进一步逐字节比较两轮 V6 的最终 `solution.v` 与 `round_01/solution.v`：**42/42 完全相同，全部 selected_round=1**。首测 4 次 RTL repair 用时 28.381 秒，复测 7 次用时 72.456 秒，合计 11 次、100.837 秒，均未改变最终提交代码。编译修复未新增 lint 通过，功能修复未新增自检通过。这里没有运行新的初稿独立评分，但代码相等已经足以确认这些修复没有改变最终 RTL；不能把最终通过题归功于修复。逐题核对记录见 [修复产物审计](../../output/rtl-v7-diagnosis-20261025/historical-repair-audit.json)。
+本次进一步逐字节比较两轮 V6 的最终 `solution.v` 与 `round_01/solution.v`：**42/42 完全相同，全部 selected_round=1**。首测 4 次 RTL repair 用时 28.381 秒，复测 7 次用时 72.456 秒，合计 11 次、100.837 秒，均未改变最终提交代码。编译修复未新增 lint 通过，功能修复未新增自检通过。这里没有运行新的初稿独立评分，但代码相等已经足以确认这些修复没有改变最终 RTL；不能把最终通过题归功于修复。逐题核对记录见 修复产物审计（开发归档路径，未随库交付：`../../output/rtl-v7-diagnosis-20261025/historical-repair-audit.json`）。
 
 编译方面，V6 复测两个不同位宽的旋转样本反复生成动态普通范围切片；另一算术样本反复保留非法负常量写法。三个样本各生成 3 轮仍未消除编译错误。V7 已取回的优先编码器又出现非法 `.msb()` 写法并重复返回同一候选。因此“提供编译器错误后，再要求完整重写”的机制目前没有可靠解决同类错误。
 
@@ -82,7 +84,7 @@ V6 复测原始代码中可见：题面要求下降沿却生成上升沿；组�
 
 ### 4. 源码中另有两个可确认的检查与选择缺口
 
-冻结 V7 的 [verification.py](../../output/rtl-v7-qwen-retry-20261025/sources/latest/agent/verification.py) 中，Vivado `lint` 仅执行 `xvlog --sv`；`xelab` 在带测试台的 `simulate` 阶段才运行。[main.py](../../output/rtl-v7-qwen-retry-20261025/sources/latest/agent/main.py) 在测试台生成失败时退出，因此还没有独立于模型测试台的 DUT 展开门槛。
+冻结 V7 的 verification.py（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/sources/latest/agent/verification.py`） 中，Vivado `lint` 仅执行 `xvlog --sv`；`xelab` 在带测试台的 `simulate` 阶段才运行。main.py（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/sources/latest/agent/main.py`） 在测试台生成失败时退出，因此还没有独立于模型测试台的 DUT 展开门槛。
 
 同一选择逻辑把“语法编译通过”“展开失败”“已执行但断言失败”都保存在 rank=2，并在不同候选同等级时保留旧稿。这是源码可证的分级过粗风险：后续候选若从不能展开改到可以运行，未必能替换旧稿。但没有证据证明这导致了本轮 V7 的某个具体失败；优先编码器明确属于语法失败和重复候选，不能归为误选。V6 复测的 11 个 L1 已逐一核对，均存在实际功能失配记录，也不能倒推为展开故障。
 
@@ -95,7 +97,7 @@ V7 的 auto 激励和盲期望复核位于编译通过之后，无法救回在�
 3. **再减少验证计划的生成负担并提高参考算法可靠性**：由程序承担已知固定字段；保留独立性和语义约束；将时序规格落实为可检查的状态/输出关系。验收同时看计划合法率、正确参考接受率、错误实现检出率及总耗时，不能只看计划合法率。
 4. **固定 Qwen 后做最新版本实测**，判断功能和时间是否同时改善。当前没有模型切换、量化损失或推理配置对照，不能把问题直接归因于 Q4 或 thinking=false，也不据此改动既定配置。
 
-本节统计复核使用已有 [机制统计](../../output/rtl-v6-retest-analysis-20261024/mechanisms.json)、[完整逐题结果](../../output/rtl-v6-qwen-retest-20261024/results/summary.json)、[原始归因记录](../../output/rtl-v6-qwen-retest-20261024/inspection.json) 和 [V6 失败分析](../../output/rtl-v6-qwen-retest-20261024/FINDINGS.md)。200 项本地工程回归证明受控输入下机制可工作，不证明千问会稳定生成正确 RTL、计划或诊断；两者必须分别报告。
+本节统计复核使用已有 机制统计（开发归档路径，未随库交付：`../../output/rtl-v6-retest-analysis-20261024/mechanisms.json`）、完整逐题结果（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/results/summary.json`）、原始归因记录（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/inspection.json`） 和 V6 失败分析（开发归档路径，未随库交付：`../../output/rtl-v6-qwen-retest-20261024/FINDINGS.md`）。200 项本地工程回归证明受控输入下机制可工作，不证明千问会稳定生成正确 RTL、计划或诊断；两者必须分别报告。
 
 ## 计费与操作失败
 
@@ -107,9 +109,9 @@ V7 的 auto 激励和盲期望复核位于编译通过之后，无法救回在�
 
 ## 证据文件
 
-- [最后保存的局部结果与历史对照](../../output/rtl-v7-qwen-retry-20261025/partial-observations.json)、[逐次 UI 进展](../../output/rtl-v7-qwen-retry-20261025/progress-ui.log)
-- [优先编码器失败记录和原始源码](../../output/rtl-v7-qwen-retry-20261025/priority-regression-ui.txt)、[本地编译日志](../../output/rtl-v7-qwen-retry-20261025/observations/priority8-local-compile.log)
-- [清理和费用](../../output/rtl-v7-qwen-retry-20261025/cleanup.json)、[本轮最终状态](../../output/rtl-v7-qwen-retry-20261025/ACTIVE_RUN.md)
-- [原授权](../../output/rtl-v7-qwen-retry-20261025/authorization.json)、[不可重置租约](../../output/rtl-v7-qwen-retry-20261025/lease.json)、[输入与参考控制来源](../../output/rtl-v7-qwen-retry-20261025/preflight-provenance.json)
+- 最后保存的局部结果与历史对照（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/partial-observations.json`）、逐次 UI 进展（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/progress-ui.log`）
+- 优先编码器失败记录和原始源码（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/priority-regression-ui.txt`）、本地编译日志（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/observations/priority8-local-compile.log`）
+- 清理和费用（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/cleanup.json`）、本轮最终状态（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/ACTIVE_RUN.md`）
+- 原授权（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/authorization.json`）、不可重置租约（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/lease.json`）、输入与参考控制来源（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/preflight-provenance.json`）
 
-![余额118，无活动实例](../../output/rtl-v7-qwen-retry-20261025/cloud-after-cleanup.jpg)
+!余额118，无活动实例（开发归档路径，未随库交付：`../../output/rtl-v7-qwen-retry-20261025/cloud-after-cleanup.jpg`）

@@ -5,6 +5,7 @@
 # Deliberately no set -u: AMD settings may contain unset environment variables.
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/defaults.sh"
 PORT="${API_PORT:-7860}"
 STATE="${AGENT_TMP:-/var/tmp}/run_api"
 PIDFILE="$STATE/run_api.pid"

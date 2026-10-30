@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V8 固定千问完整测试与分析（2026-10-26）
 
 **V8 功能通过 7/21（33.3%），均达到 L3；L0=3、L1=11。与 V6 历史复测的 7/21 持平，本轮未出现新的功能通过题。生成阶段累计 1026.359 秒，比该历史批次的 1157.822 秒减少 11.35%。**
@@ -56,27 +58,27 @@
 
 | 题目 | 独立等级 | 生成秒 | 模型调用 | 最终候选自检 |
 | --- | ---: | ---: | ---: | --- |
-| [gen_v4/v4_01_rotate12](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_01_rotate12/solution.v) | L0 | 17.512 | 2 | 未执行 |
-| [gen_v4/v4_02_signed_addsub6](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_02_signed_addsub6/solution.v) | L1 | 53.904 | 5 | 未执行 |
-| [gen_v4/v4_03_negedge_mod7](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_03_negedge_mod7/solution.v) | L1 | 58.557 | 4 | FAIL |
-| [gen_v4/v4_04_group_sum3](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_04_group_sum3/solution.v) | L1 | 58.964 | 3 | 未执行 |
-| [gen_v4/v4_05_enabled_1101](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_05_enabled_1101/solution.v) | L0 | 119.153 | 3 | 未执行 |
-| [gen_v4/v4_06_readyvalid_fifo2](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_06_readyvalid_fifo2/solution.v) | L1 | 73.364 | 3 | FAIL |
-| [practice/p01_priority8](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p01_priority8/solution.v) | L3 | 31.853 | 3 | 未执行 |
-| [practice/p02_rotate8](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p02_rotate8/solution.v) | L0 | 24.793 | 3 | 未执行 |
-| [practice/p03_sat_counter4](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p03_sat_counter4/solution.v) | L3 | 35.053 | 2 | PASS |
-| [practice/p04_shift8](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p04_shift8/solution.v) | L3 | 21.760 | 2 | PASS |
-| [practice/p05_detect1011](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p05_detect1011/solution.v) | L1 | 53.807 | 5 | FAIL |
-| [practice/p06_serial_parity8](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p06_serial_parity8/solution.v) | L1 | 99.967 | 5 | FAIL |
-| [gen_v2/v2_01_signed_sat8](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_01_signed_sat8/solution.v) | L3 | 30.553 | 2 | PASS |
-| [gen_v2/v2_02_counter_priority](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_02_counter_priority/solution.v) | L3 | 20.796 | 2 | PASS |
-| [gen_v2/v2_03_elastic_buffer](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_03_elastic_buffer/solution.v) | L1 | 58.300 | 3 | PASS |
-| [gen_v2/v2_04_fifo3](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_04_fifo3/solution.v) | L1 | 54.538 | 3 | 未执行 |
-| [gen_v2/v2_05_enabled_101](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_05_enabled_101/solution.v) | L1 | 33.311 | 3 | 未执行 |
-| [gen_v2/v2_06_round_robin4](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_06_round_robin4/solution.v) | L1 | 79.701 | 4 | FAIL |
-| [public/ex01_popcount8](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/public/ex01_popcount8/solution.v) | L3 | 26.028 | 4 | FAIL |
-| [public/ex02_detect_1101](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/public/ex02_detect_1101/solution.v) | L1 | 51.891 | 4 | FAIL |
-| [public/ex03_lfsr8](../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/public/ex03_lfsr8/solution.v) | L3 | 22.554 | 3 | 未执行 |
+| gen_v4/v4_01_rotate12（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_01_rotate12/solution.v`） | L0 | 17.512 | 2 | 未执行 |
+| gen_v4/v4_02_signed_addsub6（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_02_signed_addsub6/solution.v`） | L1 | 53.904 | 5 | 未执行 |
+| gen_v4/v4_03_negedge_mod7（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_03_negedge_mod7/solution.v`） | L1 | 58.557 | 4 | FAIL |
+| gen_v4/v4_04_group_sum3（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_04_group_sum3/solution.v`） | L1 | 58.964 | 3 | 未执行 |
+| gen_v4/v4_05_enabled_1101（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_05_enabled_1101/solution.v`） | L0 | 119.153 | 3 | 未执行 |
+| gen_v4/v4_06_readyvalid_fifo2（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v4/v4_06_readyvalid_fifo2/solution.v`） | L1 | 73.364 | 3 | FAIL |
+| practice/p01_priority8（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p01_priority8/solution.v`） | L3 | 31.853 | 3 | 未执行 |
+| practice/p02_rotate8（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p02_rotate8/solution.v`） | L0 | 24.793 | 3 | 未执行 |
+| practice/p03_sat_counter4（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p03_sat_counter4/solution.v`） | L3 | 35.053 | 2 | PASS |
+| practice/p04_shift8（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p04_shift8/solution.v`） | L3 | 21.760 | 2 | PASS |
+| practice/p05_detect1011（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p05_detect1011/solution.v`） | L1 | 53.807 | 5 | FAIL |
+| practice/p06_serial_parity8（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/practice/p06_serial_parity8/solution.v`） | L1 | 99.967 | 5 | FAIL |
+| gen_v2/v2_01_signed_sat8（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_01_signed_sat8/solution.v`） | L3 | 30.553 | 2 | PASS |
+| gen_v2/v2_02_counter_priority（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_02_counter_priority/solution.v`） | L3 | 20.796 | 2 | PASS |
+| gen_v2/v2_03_elastic_buffer（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_03_elastic_buffer/solution.v`） | L1 | 58.300 | 3 | PASS |
+| gen_v2/v2_04_fifo3（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_04_fifo3/solution.v`） | L1 | 54.538 | 3 | 未执行 |
+| gen_v2/v2_05_enabled_101（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_05_enabled_101/solution.v`） | L1 | 33.311 | 3 | 未执行 |
+| gen_v2/v2_06_round_robin4（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/gen_v2/v2_06_round_robin4/solution.v`） | L1 | 79.701 | 4 | FAIL |
+| public/ex01_popcount8（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/public/ex01_popcount8/solution.v`） | L3 | 26.028 | 4 | FAIL |
+| public/ex02_detect_1101（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/public/ex02_detect_1101/solution.v`） | L1 | 51.891 | 4 | FAIL |
+| public/ex03_lfsr8（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/results/generated/latest/public/ex03_lfsr8/solution.v`） | L3 | 22.554 | 3 | 未执行 |
 
 ## 环境、模型和证据
 
@@ -86,8 +88,8 @@
 - 先前四次 One-click 启动在平台调度层失败，费用均为 0。本次用户明确批准改用无原生自动回收的 Hackathon，并在线兜底销毁；原租约 14:46:18，计算停止线 16:26:18、销毁线 16:36:18（北京时间），本次提前完成销毁。没有将人工兜底写成自动回收。
 - 证据 ZIP 1109776 字节，SHA256 `ca604d24c94c8ff86754b8db9049fcd68474219e0845278bdd7a05f40669209c`；1148 个索引文件，遗漏 0，摘要、CRC、成员清单、完整批次和观察样本检查全部通过。
 
-[完整证据包](../../output/rtl-v8-qwen-retry5-20261026-144618/cloud-evidence.zip) · [核验结果](../../output/rtl-v8-qwen-retry5-20261026-144618/verification.json) · [分析数据](../../output/rtl-v8-qwen-retry5-20261026-144618/analysis/analysis.json) · [逐题 CSV](../../output/rtl-v8-qwen-retry5-20261026-144618/analysis/latest.csv) · [修复与 TB 字节依据](../../output/rtl-v8-qwen-retry5-20261026-144618/analysis/runtime-diagnostics.json)
+完整证据包（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/cloud-evidence.zip`） · 核验结果（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/verification.json`） · 分析数据（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/analysis/analysis.json`） · 逐题 CSV（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/analysis/latest.csv`） · 修复与 TB 字节依据（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/analysis/runtime-diagnostics.json`）
 
-[机制分析](../../output/rtl-v8-qwen-mechanisms-20261026/mechanisms.json) · [本地正确参考控制](../../output/rtl-v8-qwen-retry5-20261026-144618/oracle-controls/summary.json) · [清理和费用](../../output/rtl-v8-qwen-retry5-20261026-144618/cleanup.json) · [最终余额及无实例截图](../../output/rtl-v8-qwen-retry5-20261026-144618/cloud-final-balance-header.png)
+机制分析（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-mechanisms-20261026/mechanisms.json`） · 本地正确参考控制（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/oracle-controls/summary.json`） · 清理和费用（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/cleanup.json`） · 最终余额及无实例截图（开发归档路径，未随库交付：`../../output/rtl-v8-qwen-retry5-20261026-144618/cloud-final-balance-header.png`）
 
 平台账户菜单曾显示缓存余额 117；刷新后的积分页面及最终首页均为 116，费用按刷新证据确认。下载的原始证据不因本地控制或报告而改写。

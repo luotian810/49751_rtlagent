@@ -1,13 +1,15 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # 实测记录（2026-09-28）
 
 环境：Windows x64、Python 3.12.14、Icarus Verilog 13.0（MSYS2 mingw64）；模型：DeepSeek deepseek-flash。
 
 ## 已完成的真实检查
 
-- 30 项 Python 测试全部通过，包含真实 HDL 仿真、失败标记、无 PASS、看门狗、超时清理、接口与 HTTP 协议。日志：[python_tests.txt](../runs/python_tests.txt)。
+- 30 项 Python 测试全部通过，包含真实 HDL 仿真、失败标记、无 PASS、看门狗、超时清理、接口与 HTTP 协议。日志：python_tests.txt（开发归档路径，未随库交付：`../runs/python_tests.txt`）。
 - PowerShell 启动入口实际运行通过，Bash 启动文件通过 bash -n 语法检查；Bash/Linux 下完整执行未验证。
 - 官方 baseline.py、run_baseline.sh 与本地原参考仓库逐字节一致。
-- 三道手写教学设计通过，共 8,201 次检查，并导出 VCD 波形。见 [教学报告](../runs/demo/report.md)。
+- 三道手写教学设计通过，共 8,201 次检查，并导出 VCD 波形。见 教学报告（开发归档路径，未随库交付：`../runs/demo/report.md`）。
 
 ## DeepSeek 生成产物与独立复核
 
@@ -15,9 +17,9 @@
 
 | 任务 | 模型自检 | 选中 RTL 轮次 | 本次生成秒数 | 输入/输出 token | 独立检查 |
 | --- | --- | ---: | ---: | ---: | --- |
-| [popcount8](../runs/deepseek_final/popcount8/solution.v) | 通过 | 1 | 5.328 | 886/865 | passed，256 次 |
-| [detect_1101](../runs/deepseek_final/detect_1101/solution.v) | 通过 | 2 | 12.797 | 2427/2665 | passed，2824 次 |
-| [lfsr8](../runs/deepseek_lfsr8_revised/solution.v) | 通过 | 1 | 7.610 | 1162/1726 | passed，5121 次 |
+| popcount8（开发归档路径，未随库交付：`../runs/deepseek_final/popcount8/solution.v`） | 通过 | 1 | 5.328 | 886/865 | passed，256 次 |
+| detect_1101（开发归档路径，未随库交付：`../runs/deepseek_final/detect_1101/solution.v`） | 通过 | 2 | 12.797 | 2427/2665 | passed，2824 次 |
+| lfsr8（开发归档路径，未随库交付：`../runs/deepseek_lfsr8_revised/solution.v`） | 通过 | 1 | 7.610 | 1162/1726 | passed，5121 次 |
 
 每次模型调用的 token 和工具调用摘要见对应目录 trace.jsonl；完整测试台、每轮 RTL、日志和 wave.vcd 均保留。
 

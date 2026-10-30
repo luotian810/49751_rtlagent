@@ -2,11 +2,11 @@
   "schema_version": 1,
   "version": "2026.10.29-v11.1-qwen-only",
   "track": "rtl",
-  "status": "development_pending_qwen_validation",
+  "status": "development_validated_formal_service_deployed",
   "upstream": {
     "repository": "https://gitee.com/Vickyiii/rtlagent2026",
     "commit": "fc8e26a5828b7222e9db439cee29128bcf4f8865",
-    "checked_on": "2026-10-27"
+    "checked_on": "2026-10-30"
   },
   "model": {
     "name": "Qwen3-14B-Q4_K_M",
@@ -19,7 +19,8 @@
     "measured_vram_gb": 14.852784128,
     "measured_vram_scope": "509 whole-GPU periodic samples over 609.17 seconds covering model load and six requests, zero sampling errors; decimal GB, not a hardware high-water counter or a guarantee for untested workloads",
     "finetuned": false,
-    "finetune_weights_url": null
+    "finetune_weights_url": null,
+    "license": "Apache-2.0"
   },
   "development_model": {
     "provider": "local_llamacpp",
@@ -33,7 +34,7 @@
     "rope_scaling": null,
     "verified": false,
     "loaded_context_len": 32768,
-    "verification_note": "Cloud llama.cpp loaded a 32768-token context; full-length generation limits are not stress-tested."
+    "verification_note": "Loaded 32768 context; synthetic 32600 input and 16 output tokens completed without truncation. Arbitrary full-context output not proven."
   },
   "generation": {
     "chat_template_kwargs": {
@@ -55,9 +56,9 @@
     "http_port": 7860,
     "start_command": "bash serve/start.sh",
     "http_start_command": "bash serve/run_api.sh start",
-    "http_status": "official_rc_tunnel_external_one_task_verified_then_test_instance_destroyed",
-    "verification_report": "docs/fullchain_validation_20261025.md",
-    "http_supervisor_status": "bash_syntax_checked_linux_lifecycle_pending"
+    "http_status": "formal_rc_tunnel_deployed_and_reported_20261030",
+    "verification_report": "docs/validation_status_20261030.md",
+    "http_supervisor_status": "linux_lifecycle_and_300_request_session_verified"
   },
   "local_validation": {
     "updated": "2026-10-05",
@@ -1406,7 +1407,7 @@
   },
   "v11p1_validation": {
     "date": "2026-10-29",
-    "status": "pending_fixed_qwen_validation",
+    "status": "local_regression_passed_before_cloud_acceptance",
     "scope": "V11 regression fixes only; no new architecture or task-specific answers",
     "restored_guidance_from": "2026.10.27-v10-qwen-only",
     "preserved_v11_features": [
@@ -1432,5 +1433,38 @@
     "report": "docs/v11p1_regression_fix_20261029.md",
     "backup": "D:\\fgpa\\backups\\rtl-v11-before-v11p1-20261029.zip",
     "evidence_root": "D:\\fgpa\\output\\rtl-v11p1-fix-20261029"
+  },
+  "v11p1_acceptance": {
+    "date": "2026-10-30",
+    "tested_commit": "f136c92a9476d65224ac4e33ecde45fe15c1baee",
+    "capability_samples": 105,
+    "reference_l3": 105,
+    "candidate_levels": {
+      "L0": 14,
+      "L1": 54,
+      "L3": 37
+    },
+    "selfcheck_pass": 28,
+    "selfcheck_false_positive": 9,
+    "generation_s": 4442.659,
+    "model_calls": 328,
+    "engineering_requests": 300,
+    "observed_http_within_deadline_plus_20": 299,
+    "engineering_observation_exception": "stress_022 client paused; observed 1008.175s, service 43.742s",
+    "official_score": null,
+    "network_namespace_isolation_verified": false,
+    "clean_private_image_build_verified": false,
+    "report": "docs/validation_status_20261030.md"
+  },
+  "maintenance": {
+    "revision": "2026.10.30-submission-audit-fixes",
+    "scope": [
+      "startup_defaults",
+      "licenses",
+      "generated_artifact_cleanup",
+      "documentation",
+      "live_vram_health"
+    ],
+    "agent_skill_baseline_model_inference_unchanged": true
   }
 }

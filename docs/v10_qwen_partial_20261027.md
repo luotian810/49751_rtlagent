@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # V10 固定千问部分实测与分析
 
 **后续进展：其余 14 题已经补齐；21 题完整覆盖见 [完整测试报告](v10_qwen_complete_20261027.md)。本页仍保留原七题部分批次口径。**
@@ -46,4 +48,4 @@
 
 证据包 361,106 字节、376 个索引成员、排除 0，ZIP CRC、成员集合、摘要及七个已观测样本检查均通过；`complete_batch_verified=false`，明确为部分批次。SHA256：`12c7e87bae381f77a6308632da3386241bfe7edd9ef01a722617ac606b68234e`。报告更新前，当前工程的 53 个已冻结源文件全部匹配；之后仅更新报告与状态元数据。
 
-[逐题结果](../../output/rtl-v10-qwen-test-20261027/analysis/latest.csv) · [分析数据](../../output/rtl-v10-qwen-test-20261027/analysis/analysis.json) · [机制与原始错误](../../output/rtl-v10-qwen-test-20261027/analysis/runtime-diagnostics.json) · [完整性核验](../../output/rtl-v10-qwen-test-20261027/verification.json) · [原始证据包](../../output/rtl-v10-qwen-test-20261027/cloud-evidence.zip) · [剩余未开始任务](../../output/rtl-v10-qwen-test-20261027/unstarted-jobs.json) · [清理与费用](../../output/rtl-v10-qwen-test-20261027/cleanup.json) · [最终余额](../../output/rtl-v10-qwen-test-20261027/cloud-final-balance.jpg)
+逐题结果（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/analysis/latest.csv`） · 分析数据（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/analysis/analysis.json`） · 机制与原始错误（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/analysis/runtime-diagnostics.json`） · 完整性核验（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/verification.json`） · 原始证据包（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/cloud-evidence.zip`） · 剩余未开始任务（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/unstarted-jobs.json`） · 清理与费用（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/cleanup.json`） · 最终余额（开发归档路径，未随库交付：`../../output/rtl-v10-qwen-test-20261027/cloud-final-balance.jpg`）

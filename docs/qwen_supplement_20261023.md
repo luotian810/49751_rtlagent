@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # 千问一致性修正与遗漏补测
 
 用户于 2026-10-23 明确要求：代码生成、技能迭代与基准测试只使用既定千问主模型，不再使用 DeepSeek 或其他模型。历史商业 API 数据保留为历史记录，不作为千问效果、同模型增益或参赛能力的依据。
@@ -85,6 +87,6 @@ V4/V4.1 是已经被后续方案替代的中间实验版本，本轮不为其补
 
 本次每题每组 **1 个独立样本**、内部预算 **240 秒**、生成进程保护 **250 秒**；官方 baseline 原文件及其内部 16384 token/840 秒常量未修改。不能当作正式 900 秒 × 5 次 pass@1 或比赛成绩。比较的是完整智能体与原样基线，不能将差异全部归因于 skill 文本，也不能据此声称达到前 70 分。
 
-完整逐题与阶段数据见 [CSV](D:/fgpa/output/rtl-qwen-supplement-20261023/analysis/comparison.csv)、[汇总](D:/fgpa/output/rtl-qwen-supplement-20261023/analysis/ANALYSIS.md)、[全量失败归因](qwen_failure_analysis_20261023.md)。原始 [云端证据](D:/fgpa/output/rtl-qwen-supplement-20261023/cloud-evidence.zip) 已通过 1,768 个文件哈希及 45 个身份核验；[冻结输入](D:/fgpa/output/rtl-qwen-supplement-20261023/cloud-input.zip) 供复现。
+完整逐题与阶段数据见 CSV（开发归档路径，未随库交付：`D:/fgpa/output/rtl-qwen-supplement-20261023/analysis/comparison.csv`）、汇总（开发归档路径，未随库交付：`D:/fgpa/output/rtl-qwen-supplement-20261023/analysis/ANALYSIS.md`）、[全量失败归因](qwen_failure_analysis_20261023.md)。原始 云端证据（开发归档路径，未随库交付：`D:/fgpa/output/rtl-qwen-supplement-20261023/cloud-evidence.zip`） 已通过 1,768 个文件哈希及 45 个身份核验；冻结输入（开发归档路径，未随库交付：`D:/fgpa/output/rtl-qwen-supplement-20261023/cloud-input.zip`） 供复现。
 
-![无活动实例](D:/fgpa/output/rtl-qwen-supplement-20261023/cloud-cleanup.jpg)
+!无活动实例（开发归档路径，未随库交付：`D:/fgpa/output/rtl-qwen-supplement-20261023/cloud-cleanup.jpg`）

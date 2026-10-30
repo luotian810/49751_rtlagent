@@ -1,3 +1,5 @@
+> 历史记录：以下状态、模型与测试范围属于文中原日期；当前状态见 [验证摘要](validation_status_20261030.md)。开发归档路径不是本仓库附件。
+
 # RTL 参考仓库更新适配（2026-10-19）
 
 用户确认继续 RTL 赛道。HLS 新链接未改变本工程的目标语言，输出仍是 Verilog/SystemVerilog。
@@ -34,13 +36,13 @@
 
 | 检查 | 结果与证据 |
 | --- | --- |
-| Python 回归 | **58 项通过**，无跳过；[完整日志](../runs/upstream_update_20261019/tests.log) |
+| Python 回归 | **58 项通过**，无跳过；完整日志（开发归档路径，未随库交付：`../runs/upstream_update_20261019/tests.log`） |
 | 异步接口连续请求 | 同一服务连续 300 个任务，结果查询和首个 nonce 重投身份保持正确；解题使用测试替身 |
 | 真实端到端链路 | 本机 HTTP → 智能体进程 → 本机假模型服务 → 真实 Icarus 仿真 → 结果轮询通过；官方基线分支通过且只有一次模型调用 |
 | 关闭与超时 | 取消当前任务、不启动排队任务、保留候选、清理每题临时目录等回归通过 |
 | Linux 脚本语法 | run.sh、run_baseline.sh、start.sh、vllm.sh 均通过 Bash 语法检查；未启动真实 Linux 推理进程 |
 | 官方基线完整性 | 两个文件与 f7a8bd4 的 Git 提交对象逐字节一致 |
-| Vivado 2025.2 教学例 | popcount8、detect_1101、lfsr8 **全部仿真与综合通过**；[报告](../runs/upstream_update_20261019/vivado_verified/report.md) |
+| Vivado 2025.2 教学例 | popcount8、detect_1101、lfsr8 **全部仿真与综合通过**；报告（开发归档路径，未随库交付：`../runs/upstream_update_20261019/vivado_verified/report.md`） |
 | EDA 临时目录 | 显式设置 EDA_TMP 完成上述 Vivado 运行；波形、资源/时序报告和三个 DCP 已复制保留，临时根目录为空 |
 
 Vivado 首次在执行沙盒内报 XSIM 43-3409（生成 C 文件编译失败）；相同代码以正常本机权限复验后通过。

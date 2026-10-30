@@ -1,6 +1,6 @@
 """比赛异步 HTTP 入口：接单后立即返回编号，后台串行解题，轮询取回产物。
 
-启动：python -m serve.serve_api --port 7860
+正式启动：./serve/run_api.sh start；由后台监督进程启动本模块。
 仅依赖 Python 标准库；服务按比赛契约固定监听 127.0.0.1。
 """
 
@@ -10,7 +10,6 @@ import argparse
 import ctypes
 import hmac
 import json
-import math
 import os
 from pathlib import Path
 import queue
@@ -64,12 +63,24 @@ def _redact(text: str) -> str:
     return text
 
 
-def _vram_gb() -> float | None:
-    """VRAM_GB 仅接受部署者填入的实测 GB；未知时返回 null，不冒充零占用。"""
+def _vram_gb(device_root: Path = Path("/dev/dri"),
+             sysfs_root: Path = Path("/sys/class/drm")) -> float | None:
+    """实时读取实例获配的唯一 AMD GPU；不读取宿主机其他卡或旧环境采样。"""
     try:
-        value = float(os.environ["VRAM_GB"])
-        return value if math.isfinite(value) and value >= 0 else None
-    except (KeyError, ValueError):
+        # sysfs can expose every host GPU even when the container only receives
+        # one render node. Restrict discovery to /dev/dri assigned to us.
+        devices = {(sysfs_root / node.name / "device").resolve()
+                   for node in device_root.glob("renderD[0-9]*")
+                   if node.name[7:].isdigit()}
+        if len(devices) != 1:
+            return None  # Ambiguous allocation is not a measured single-card value.
+        device = devices.pop()
+        if (device / "vendor").read_text().strip().lower() != "0x1002":
+            return None
+        used = int((device / "mem_info_vram_used").read_text())
+        total = int((device / "mem_info_vram_total").read_text())
+        return used / 1e9 if 0 <= used <= total and total > 0 else None
+    except (OSError, ValueError, RuntimeError):
         return None
 
 
@@ -85,9 +96,11 @@ def _simulator_available() -> bool:
 def health() -> dict[str, Any]:
     """真正查询模型端点；HTTP 服务活着不等于模型和 EDA 已经就绪。"""
     model = os.environ.get("MODEL_NAME") or os.environ.get("LLM_MODEL") or "unknown"
+    vram = _vram_gb()
     result: dict[str, Any] = {
         "ready": False, "track": "rtl", "model": model,
-        "vram_gb": _vram_gb(), "status": "model_not_configured",
+        "vram_gb": vram, "status": "model_not_configured",
+        "vram_measurement": "live_assigned_gpu_sysfs" if vram is not None else "unavailable",
         "simulator_license": "not_checked",
     }
     if model == "unknown":
